@@ -1,0 +1,37 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "windows-release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/windows-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_PREFIX_PATH": "$env{QT_ROOT}",
+        "VCPKG_TARGET_TRIPLET": "x64-windows",
+        "VCPKG_MANIFEST_MODE": "OFF",
+        "VCPKG_APPLOCAL_DEPS": "OFF",
+        "BUILD_TESTING": "ON"
+      }
+    },
+    {
+      "name": "ubuntu-release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ubuntu-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "$env{QT_ROOT};$env{FREEEARTH_SDK_ROOT};$env{OSGEARTH_ROOT}",
+        "BUILD_TESTING": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {"name": "windows-release", "configurePreset": "windows-release"},
+    {"name": "ubuntu-release", "configurePreset": "ubuntu-release"}
+  ],
+  "testPresets": [
+    {"name": "windows-release", "configurePreset": "windows-release", "output": {"outputOnFailure": true}},
+    {"name": "ubuntu-release", "configurePreset": "ubuntu-release", "output": {"outputOnFailure": true}}
+  ]
+}
