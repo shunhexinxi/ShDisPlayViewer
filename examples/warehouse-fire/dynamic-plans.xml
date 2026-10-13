@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dynamicPlans schemaVersion="1" coordinateSystem="EPSG:4326">
+  <plan id="example-warehouse-fire-v1" name="示例：青岛仓库火灾协同处置（虚构）" loop="false" description="山东省青岛市虚构园区桌面推演；区域约东西22公里、南北13公里，8个步骤、30个图上标记，约2分30秒。坐标仅用于示意，不对应真实园区或可通行道路。报警、疏散等任务可并行；播放顺序不是现场操作先后要求。历史标记累积保留，以步骤编号识别。">
+    <step id="wf-step-01" name="01 发现报警" description="注入：仓库发现烟火。标记火点、报告警情并同步启动疏散。红色为初始情景记录；区域边界仅供演示。" markerDisplay="sequential" markerDurationSeconds="5" durationSeconds="20">
+      <viewpoint longitude="120.36500000" latitude="36.31000000" altitude="0" heading="0" pitch="-75" range="2600" flyTimeSeconds="2" />
+      <markers>
+        <marker id="wf-initial-fire" name="01 初始火点" geometryType="point" category="exercise-example" icon="" visible="true" color="#ff594f" fillColor="#ff594f" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="演练注入：A仓库发现烟火。报告地点、现场情况及人员情况；同步启动报警与疏散。不是实际警情。" longitude="120.36500000" latitude="36.31000000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="2600" viewFlyTime="2">
+          <point longitude="120.36500000" latitude="36.31000000" altitude="0" />
+        </marker>
+        <marker id="wf-warehouse" name="01 涉事仓库（示意）" geometryType="polygon" category="exercise-example" icon="" visible="true" color="#ff594f" fillColor="#ff594f" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="虚构建筑轮廓。保留为事件初始位置，不表示后续火情仍未控制。" longitude="120.36420000" latitude="36.30950000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="2600" viewFlyTime="2">
+          <point longitude="120.36420000" latitude="36.30950000" altitude="0" />
+          <point longitude="120.36580000" latitude="36.30950000" altitude="0" />
+          <point longitude="120.36580000" latitude="36.31050000" altitude="0" />
+          <point longitude="120.36420000" latitude="36.31050000" altitude="0" />
+        </marker>
+        <marker id="wf-attention-area" name="01 初始关注区" geometryType="polygon" category="exercise-example" icon="" visible="true" color="#ffbd4a" fillColor="#ffbd4a" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="用于展示影响区域标记。未计算烟气、风向、热辐射或安全距离，不能作为现场警戒边界。" longitude="120.36320000" latitude="36.30880000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="2600" viewFlyTime="2">
+          <point longitude="120.36320000" latitude="36.30880000" altitude="0" />
+          <point longitude="120.36700000" latitude="36.30880000" altitude="0" />
+          <point longitude="120.36700000" latitude="36.31120000" altitude="0" />
+          <point longitude="120.36320000" latitude="36.31120000" altitude="0" />
+        </marker>
+        <marker id="wf-alarm-report" name="01 警情上报" geometryType="point" category="exercise-example" icon="" visible="true" color="#ffbd4a" fillColor="#ffbd4a" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="记录警情信息、联系和接应信息。讨论项：有哪些人员和危险因素尚待核实？" longitude="120.36240000" latitude="36.31220000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="3400" viewFlyTime="2">
+          <point longitude="120.36240000" latitude="36.31220000" altitude="0" />
+        </marker>
+      </markers>
+    </step>
+    <step id="wf-step-02" name="02 疏散接应" description="单位疏散组组织撤离，集合清点；门岗接应救援力量。报警与疏散可同时开展，不等待本步播放。绿色箭头为示意方向。" markerDisplay="sequential" markerDurationSeconds="5" durationSeconds="20">
+      <viewpoint longitude="120.34100000" latitude="36.32200000" altitude="0" heading="0" pitch="-75" range="9000" flyTimeSeconds="2" />
+      <markers>
+        <marker id="wf-evacuation-route" name="02 疏散方向" geometryType="plot-polyline-arrow" category="exercise-example" icon="" visible="true" color="#49df9c" fillColor="#49df9c" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="虚构疏散线路；真实使用前必须按建筑出口、烟气和道路条件重新核实。" longitude="120.36060000" latitude="36.31120000" altitude="0" viewLongitude="120.34100000" viewLatitude="36.32200000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="9000" viewFlyTime="2">
+          <point longitude="120.36060000" latitude="36.31120000" altitude="0" />
+          <point longitude="120.35620000" latitude="36.31120000" altitude="0" />
+          <point longitude="120.35260000" latitude="36.31720000" altitude="0" />
+          <point longitude="120.34700000" latitude="36.31960000" altitude="0" />
+        </marker>
+        <marker id="wf-assembly" name="02 人员集合点" geometryType="point" category="exercise-example" icon="" visible="true" color="#49df9c" fillColor="#49df9c" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="疏散组在示意集合点清点人员、报告未确认人员信息。此位置不代表真实安全区。" longitude="120.34580000" latitude="36.32000000" altitude="0" viewLongitude="120.34100000" viewLatitude="36.32200000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="9000" viewFlyTime="2">
+          <point longitude="120.34580000" latitude="36.32000000" altitude="0" />
+        </marker>
+        <marker id="wf-gate" name="02 门岗接应" geometryType="point" category="exercise-example" icon="" visible="true" color="#52dce7" fillColor="#52dce7" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="接应组保持消防通道畅通，引导到场力量，提供园区图及已知危险因素。" longitude="120.35300000" latitude="36.30000000" altitude="0" viewLongitude="120.34100000" viewLatitude="36.32200000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="9000" viewFlyTime="2">
+          <point longitude="120.35300000" latitude="36.30000000" altitude="0" />
+        </marker>
+        <marker id="wf-accountability" name="02 人员信息核对" geometryType="point" category="exercise-example" icon="" visible="true" color="#49df9c" fillColor="#49df9c" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="导演提问：人员是否全部确认？未确认信息由谁反馈给现场指挥？" longitude="120.34420000" latitude="36.32400000" altitude="0" viewLongitude="120.34100000" viewLatitude="36.32200000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="4100" viewFlyTime="2">
+          <point longitude="120.34420000" latitude="36.32400000" altitude="0" />
+        </marker>
+      </markers>
+    </step>
+    <step id="wf-step-03" name="03 首批力量前往" description="蓝色依次展现首批力量出发点、进场路线、途中节点和到场位置。节点表示历史行进过程，车辆没有连续移动；路线不用于导航。" markerDisplay="sequential" markerDurationSeconds="5" durationSeconds="20">
+      <viewpoint longitude="120.30500000" latitude="36.28600000" altitude="0" heading="0" pitch="-75" range="24000" flyTimeSeconds="2" />
+      <markers>
+        <marker id="wf-first-base" name="03 首批力量出发" geometryType="point" category="exercise-example" icon="" visible="true" color="#47aaff" fillColor="#47aaff" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="虚构消防力量A从示意驻点出动。真实编成、装备和响应时间未作设定。" longitude="120.24500000" latitude="36.25000000" altitude="0" viewLongitude="120.30500000" viewLatitude="36.28600000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="24000" viewFlyTime="2">
+          <point longitude="120.24500000" latitude="36.25000000" altitude="0" />
+        </marker>
+        <marker id="wf-first-route" name="03 首批进场路线" geometryType="plot-polyline-arrow" category="exercise-example" icon="" visible="true" color="#47aaff" fillColor="#47aaff" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="行进过程示意。先展示路径，再展示途中及到场节点；不包含路网寻路。" longitude="120.24500000" latitude="36.25000000" altitude="0" viewLongitude="120.30500000" viewLatitude="36.28600000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="24000" viewFlyTime="2">
+          <point longitude="120.24500000" latitude="36.25000000" altitude="0" />
+          <point longitude="120.28100000" latitude="36.28000000" altitude="0" />
+          <point longitude="120.31700000" latitude="36.27400000" altitude="0" />
+          <point longitude="120.35300000" latitude="36.30000400" altitude="0" />
+        </marker>
+        <marker id="wf-first-checkpoint" name="03 首批途中节点" geometryType="point" category="exercise-example" icon="" visible="true" color="#47aaff" fillColor="#47aaff" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="演练报告：首批力量行进至节点A，与接应人员保持联系。地图上的出发点仍作为历史记录保留。" longitude="120.28100000" latitude="36.28000000" altitude="0" viewLongitude="120.30500000" viewLatitude="36.28600000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="24000" viewFlyTime="2">
+          <point longitude="120.28100000" latitude="36.28000000" altitude="0" />
+        </marker>
+        <marker id="wf-first-arrival" name="03 首批到场" geometryType="point" category="exercise-example" icon="" visible="true" color="#47aaff" fillColor="#47aaff" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="到场后与接应组交接警情、人员信息和危险因素，向指挥报告。" longitude="120.35460000" latitude="36.29880000" altitude="0" viewLongitude="120.35300000" viewLatitude="36.29800000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="3000" viewFlyTime="2">
+          <point longitude="120.35460000" latitude="36.29880000" altitude="0" />
+        </marker>
+      </markers>
+    </step>
+    <step id="wf-step-04" name="04 到场部署" description="建立指挥联络，核实现场情况，图示救援作业、保障和管控位置。此处只模拟任务分工，不规定内攻方式或战术安全距离。" markerDisplay="sequential" markerDurationSeconds="5" durationSeconds="20">
+      <viewpoint longitude="120.36500000" latitude="36.31000000" altitude="0" heading="0" pitch="-75" range="5000" flyTimeSeconds="2" />
+      <markers>
+        <marker id="wf-command" name="04 现场指挥点" geometryType="point" category="exercise-example" icon="" visible="true" color="#52dce7" fillColor="#52dce7" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="指挥组汇总侦察、疏散和到场报告，明确联络与增援需求。点位由真实现场条件另行确定。" longitude="120.36250000" latitude="36.31130000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="5000" viewFlyTime="2">
+          <point longitude="120.36250000" latitude="36.31130000" altitude="0" />
+        </marker>
+        <marker id="wf-rescue-sector" name="04 救援作业区" geometryType="polygon" category="exercise-example" icon="" visible="true" color="#47aaff" fillColor="#47aaff" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="专业救援力量按现场指挥开展工作。此多边形只是演练部署符号，不提供具体灭火方法。" longitude="120.36630000" latitude="36.30900000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="5000" viewFlyTime="2">
+          <point longitude="120.36630000" latitude="36.30900000" altitude="0" />
+          <point longitude="120.36750000" latitude="36.30900000" altitude="0" />
+          <point longitude="120.36750000" latitude="36.31000000" altitude="0" />
+          <point longitude="120.36630000" latitude="36.31000000" altitude="0" />
+        </marker>
+        <marker id="wf-water-support" name="04 供水保障核验" geometryType="point" category="exercise-example" icon="" visible="true" color="#52dce7" fillColor="#52dce7" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="保障组核验可用供水条件和装备接口；该点不是实际消火栓或可用水源。" longitude="120.36780000" latitude="36.30700000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="5000" viewFlyTime="2">
+          <point longitude="120.36780000" latitude="36.30700000" altitude="0" />
+        </marker>
+        <marker id="wf-traffic-control" name="04 入口秩序维护" geometryType="line" category="exercise-example" icon="" visible="true" color="#ffbd4a" fillColor="#ffbd4a" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="协调维护入口秩序、保障救援通道，避免无关人员进入现场。范围仅为图示。" longitude="120.36100000" latitude="36.30660000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="5000" viewFlyTime="2">
+          <point longitude="120.36100000" latitude="36.30660000" altitude="0" />
+          <point longitude="120.36330000" latitude="36.30660000" altitude="0" />
+        </marker>
+      </markers>
+    </step>
+    <step id="wf-step-05" name="05 请求增援" description="情景追加：首批力量报告持续保障需求。指挥协调增援，紫色依次展示请求、出发、路线和途中节点。" markerDisplay="sequential" markerDurationSeconds="5" durationSeconds="20">
+      <viewpoint longitude="120.40100000" latitude="36.33400000" altitude="0" heading="0" pitch="-75" range="25000" flyTimeSeconds="2" />
+      <markers>
+        <marker id="wf-request-support" name="05 报告增援需求" geometryType="point" category="exercise-example" icon="" visible="true" color="#c28cff" fillColor="#c28cff" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="导演注入：需要补充保障与机动力量。报告任务、现有能力、缺口、集结位置和联络方式。" longitude="120.36350000" latitude="36.31300000" altitude="0" viewLongitude="120.40100000" viewLatitude="36.33400000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="25000" viewFlyTime="2">
+          <point longitude="120.36350000" latitude="36.31300000" altitude="0" />
+        </marker>
+        <marker id="wf-support-base" name="05 增援力量出发" geometryType="point" category="exercise-example" icon="" visible="true" color="#c28cff" fillColor="#c28cff" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="虚构支援力量B接到协同任务，从示意驻点出发；编成不代表真实标准。" longitude="120.48500000" latitude="36.37000000" altitude="0" viewLongitude="120.40100000" viewLatitude="36.33400000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="25000" viewFlyTime="2">
+          <point longitude="120.48500000" latitude="36.37000000" altitude="0" />
+        </marker>
+        <marker id="wf-support-route" name="05 增援进场路线" geometryType="plot-polyline-arrow" category="exercise-example" icon="" visible="true" color="#c28cff" fillColor="#c28cff" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="虚构增援线路，与首批力量示意进场方向区分。真实道路、通行限制需重新核实。" longitude="120.48500000" latitude="36.37000000" altitude="0" viewLongitude="120.40100000" viewLatitude="36.33400000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="25000" viewFlyTime="2">
+          <point longitude="120.48500000" latitude="36.37000000" altitude="0" />
+          <point longitude="120.44900000" latitude="36.37000000" altitude="0" />
+          <point longitude="120.44900000" latitude="36.32800000" altitude="0" />
+          <point longitude="120.41900000" latitude="36.32800000" altitude="0" />
+          <point longitude="120.41900000" latitude="36.29200000" altitude="0" />
+        </marker>
+        <marker id="wf-support-checkpoint" name="05 增援途中节点" geometryType="point" category="exercise-example" icon="" visible="true" color="#c28cff" fillColor="#c28cff" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="演练报告：支援力量至节点B，确认接应点及联络信息。" longitude="120.44900000" latitude="36.32800000" altitude="0" viewLongitude="120.40100000" viewLatitude="36.33400000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="25000" viewFlyTime="2">
+          <point longitude="120.44900000" latitude="36.32800000" altitude="0" />
+        </marker>
+      </markers>
+    </step>
+    <step id="wf-step-06" name="06 增援协同" description="增援到场交接任务，医疗、装备与联络保障同步展开。各点为角色部署示意，不表示真实单位或设施。" markerDisplay="sequential" markerDurationSeconds="5" durationSeconds="20">
+      <viewpoint longitude="120.37700000" latitude="36.32200000" altitude="0" heading="0" pitch="-75" range="14000" flyTimeSeconds="2" />
+      <markers>
+        <marker id="wf-support-arrival" name="06 增援集结交接" geometryType="point" category="exercise-example" icon="" visible="true" color="#c28cff" fillColor="#c28cff" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="增援力量到达示意集结点，登记、交接任务并纳入统一指挥。" longitude="120.41900000" latitude="36.29200000" altitude="0" viewLongitude="120.37700000" viewLatitude="36.32200000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="14000" viewFlyTime="2">
+          <point longitude="120.41900000" latitude="36.29200000" altitude="0" />
+        </marker>
+        <marker id="wf-medical" name="06 医疗协同点" geometryType="point" category="exercise-example" icon="" visible="true" color="#49df9c" fillColor="#49df9c" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="示意医疗力量接应、信息交接与转运协调。未设置伤情诊断或医疗处置方案。" longitude="120.34900000" latitude="36.33000000" altitude="0" viewLongitude="120.37700000" viewLatitude="36.32200000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="14000" viewFlyTime="2">
+          <point longitude="120.34900000" latitude="36.33000000" altitude="0" />
+        </marker>
+        <marker id="wf-logistics" name="06 装备保障点" geometryType="point" category="exercise-example" icon="" visible="true" color="#52dce7" fillColor="#52dce7" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="装备与补给保障，登记领用及机动力量状态。" longitude="120.38500000" latitude="36.29600000" altitude="0" viewLongitude="120.37700000" viewLatitude="36.32200000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="14000" viewFlyTime="2">
+          <point longitude="120.38500000" latitude="36.29600000" altitude="0" />
+        </marker>
+        <marker id="wf-liaison" name="06 协同信息汇总" geometryType="point" category="exercise-example" icon="" visible="true" color="#52dce7" fillColor="#52dce7" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="导演提问：增援是否收到同一任务口径？人员清点、救援和保障信息是否闭环？" longitude="120.37300000" latitude="36.33000000" altitude="0" viewLongitude="120.37700000" viewLatitude="36.32200000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="14000" viewFlyTime="2">
+          <point longitude="120.37300000" latitude="36.33000000" altitude="0" />
+        </marker>
+      </markers>
+    </step>
+    <step id="wf-step-07" name="07 火情控制" description="情景追加：指挥接报火情已控制。绿色状态点记录此时结论；红色初始火点仍作为历史记录。继续按指挥要求核查和看护。" markerDisplay="sequential" markerDurationSeconds="5" durationSeconds="15">
+      <viewpoint longitude="120.36500000" latitude="36.31600000" altitude="0" heading="0" pitch="-75" range="3200" flyTimeSeconds="2" />
+      <markers>
+        <marker id="wf-controlled" name="07 火情已控制" geometryType="point" category="exercise-example" icon="" visible="true" color="#49df9c" fillColor="#49df9c" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="演练状态更新：根据导演注入，火情已控制。该状态不是由软件传感或火灾模型自动判定。" longitude="120.36550000" latitude="36.31080000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31600000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="3200" viewFlyTime="2">
+          <point longitude="120.36550000" latitude="36.31080000" altitude="0" />
+        </marker>
+        <marker id="wf-recheck" name="07 现场复核" geometryType="point" category="exercise-example" icon="" visible="true" color="#49df9c" fillColor="#49df9c" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="专业人员按现场指挥要求开展复核，反馈尚存风险，保留必要管控。" longitude="120.36680000" latitude="36.31200000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31600000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="3200" viewFlyTime="2">
+          <point longitude="120.36680000" latitude="36.31200000" altitude="0" />
+        </marker>
+        <marker id="wf-watch" name="07 后续看护交接" geometryType="point" category="exercise-example" icon="" visible="true" color="#52dce7" fillColor="#52dce7" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="记录后续看护、联络和交接责任；解除措施由真实现场指挥决定。" longitude="120.36320000" latitude="36.30820000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31600000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="3200" viewFlyTime="2">
+          <point longitude="120.36320000" latitude="36.30820000" altitude="0" />
+        </marker>
+      </markers>
+    </step>
+    <step id="wf-step-08" name="08 清点复盘" description="完成各组人员与装备清点、信息交接及复盘。可回看任一步骤，讨论报警信息、行进接应、增援和协同中的缺口。" markerDisplay="sequential" markerDurationSeconds="5" durationSeconds="15">
+      <viewpoint longitude="120.36500000" latitude="36.31000000" altitude="0" heading="0" pitch="-75" range="100000" flyTimeSeconds="2" />
+      <markers>
+        <marker id="wf-final-accountability" name="08 人员清点完成" geometryType="point" category="exercise-example" icon="" visible="true" color="#49df9c" fillColor="#49df9c" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="各组汇报人员清点结果，核对进入、退出和交接记录。演练不预设真实伤亡数字。" longitude="120.34300000" latitude="36.31400000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="100000" viewFlyTime="2">
+          <point longitude="120.34300000" latitude="36.31400000" altitude="0" />
+        </marker>
+        <marker id="wf-equipment-return" name="08 装备清点交接" geometryType="point" category="exercise-example" icon="" visible="true" color="#52dce7" fillColor="#52dce7" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="登记装备回收、缺损和补充需求，完成后续任务交接。" longitude="120.38900000" latitude="36.30000000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="100000" viewFlyTime="2">
+          <point longitude="120.38900000" latitude="36.30000000" altitude="0" />
+        </marker>
+        <marker id="wf-debrief" name="08 演练复盘" geometryType="point" category="exercise-example" icon="" visible="true" color="#49df9c" fillColor="#49df9c" fillOpacity="0.14" lineWidth="3" lineOpacity="0.95" pointSize="18" textSize="16" altitudeMode="0" labelBackgroundImage="" labelTextColor="#ffffffff" labelBackgroundColor="#e620354d" labelWidth="210" labelHeight="32" description="复盘问题：报警是否清楚？人员信息是否闭环？首批与增援是否顺利接应？地图标记、路线和视角是否清晰？" longitude="120.35300000" latitude="36.33400000" altitude="0" viewLongitude="120.36500000" viewLatitude="36.31000000" viewAltitude="0" viewHeading="0" viewPitch="-75" viewRange="100000" viewFlyTime="2">
+          <point longitude="120.35300000" latitude="36.33400000" altitude="0" />
+        </marker>
+      </markers>
+    </step>
+  </plan>
+</dynamicPlans>

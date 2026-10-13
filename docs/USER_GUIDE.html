@@ -1,0 +1,1045 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ShDisplayViewer 使用操作说明书</title><style>
+:root{--blue:#123e65;--accent:#087c91;--ink:#263b4b;--muted:#667786;--line:#d4e1e9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;color:var(--ink);background:#f1f5f7;font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif}
+a{color:#08738d;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #36bdcc;outline-offset:3px}
+.brand{padding:22px max(24px,calc((100vw - 1240px)/2));background:var(--blue);color:white;border-bottom:4px solid #32b6bf;display:flex;gap:16px;align-items:center}
+.brand img{width:48px;height:48px}.brand strong{display:block;font-size:23px}.brand small{color:#c9e1ed;display:block}
+.layout{max-width:1280px;margin:auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;padding:28px 22px 64px}
+nav{position:sticky;top:20px;align-self:start;font-size:14px;max-height:92vh;overflow:auto}nav strong{display:block;padding:4px 12px 10px}nav a{display:block;padding:6px 12px;line-height:1.6;border-left:2px solid #cfdee7;text-decoration:none}nav a:hover{background:#e1eff2;border-left-color:#168b9b}
+.nav-sub{font-size:12.5px;padding-left:21px;color:#557282}button{border:1px solid #bfd2df;border-radius:6px;background:white;color:#124563;padding:8px 14px;margin:4px 12px 14px;cursor:pointer}
+main{min-width:0;background:white;border:1px solid var(--line);border-radius:12px;padding:30px 36px;box-shadow:0 4px 18px #17395308}
+h1{font-size:30px;line-height:1.35;margin:0 0 12px}h1+p{font-size:14px;color:var(--muted)}h2{font-size:23px;line-height:1.5;margin:40px 0 15px;padding-top:18px;border-top:2px solid #e2ebf0}h3{font-size:18px;margin:26px 0 10px;line-height:1.6}p{margin:12px 0}li{margin:5px 0}ol,ul{padding-left:25px}
+table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:14px;line-height:1.65;margin:18px 0}th,td{border:1px solid var(--line);padding:9px 11px;vertical-align:top;overflow-wrap:anywhere}th{background:#e8f1f6;color:#164e6b;text-align:left}tr:nth-child(even) td{background:#f8fafb}th:first-child,td:first-child{width:30%}
+pre{background:#edf3f7;border-left:3px solid #3188a4;border-radius:4px;padding:14px 16px;font-size:13px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}code{font-family:Consolas,"SFMono-Regular","PingFang SC",monospace;font-size:.9em}p code,li code,td code{background:#eaf0f4;padding:1px 4px;border-radius:3px;overflow-wrap:anywhere}svg{display:block;width:100%;height:auto;margin:20px 0}footer{margin-top:30px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}.print-cover{display:none}
+@media(max-width:860px){.layout{display:block;padding:16px 12px}nav{position:static;max-height:none;margin-bottom:16px}nav .nav-sub{display:none}nav a{display:inline-block;width:49%;vertical-align:top}main{padding:22px 18px}h1{font-size:25px}table{font-size:13px}}
+@media print{
+@page{size:A4;margin:18mm 16mm 19mm}body{background:white;font-size:10pt;line-height:1.6;color:#243848}.brand,nav{display:none}.layout{display:block;margin:0;padding:0}main{border:0;box-shadow:none;border-radius:0;padding:0}
+.print-cover{display:flex;min-height:245mm;flex-direction:column;justify-content:center;align-items:flex-start;break-after:page;padding:22mm 0}.print-cover img{width:25mm;height:25mm;margin-bottom:12mm}.print-cover .kicker{color:#168895;letter-spacing:2px;font-size:11pt}.print-cover .cover-title{font-size:29pt;color:#143e62;line-height:1.45;font-weight:700;margin:8mm 0}.print-cover .cover-meta{color:#577080;font-size:11pt;line-height:1.85}.print-cover .cover-rule{height:3mm;width:60mm;background:#1c9fa9;margin:13mm 0}.print-cover .cover-company{margin-top:10mm;font-size:11pt}
+h1{font-size:21pt;margin:0 0 8pt}h2{font-size:15pt;margin:25pt 0 10pt;padding-top:10pt;break-after:avoid-page}h3{font-size:12pt;margin:18pt 0 7pt;break-after:avoid-page}h1+p{font-size:9pt}p{margin:7pt 0;orphans:3;widows:3;break-inside:avoid-page}li{margin:3pt 0;orphans:2;widows:2}
+table{font-size:9pt;line-height:1.45;margin:11pt 0}th,td{padding:5pt 6pt}thead{display:table-header-group}tr{break-inside:avoid-page}pre{font-size:8.5pt;line-height:1.45;padding:9pt 11pt;margin:11pt 0;break-inside:avoid-page;overflow:visible}code{font-size:.95em}svg{margin:12pt 0;break-inside:avoid-page}a{color:#17687e;text-decoration:none}footer{font-size:8pt;margin:20pt 0 0;padding-top:9pt}strong{font-weight:600}
+}
+</style></head><body>
+  <header class="brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPHRpdGxlPlNoRGlzcGxheVZpZXdlciDigJQg5LiJ57u05Zyw5Zu+5ryU57uD57O757ufPC90aXRsZT4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0idGlsZSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMjM2RkFGIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMEIyRjU4Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJlYXJ0aCIgY3g9Ii4zIiBjeT0iLjI1IiByPSIuODUiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMzZCQUREIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTI2MTlCIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnb2xkIiB4MT0iMCIgeTE9IjAiIHgyPSIuOCIgeTI9IjEiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjRkZFMDhDIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRjZBRjQyIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGNsaXBQYXRoIGlkPSJnbG9iZSI+PGNpcmNsZSBjeD0iMjI2IiBjeT0iMjIyIiByPSIxNTEiLz48L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSI0ODAiIGhlaWdodD0iNDgwIiByeD0iMTA1IiBmaWxsPSJ1cmwoI3RpbGUpIi8+CiAgPHJlY3QgeD0iMjMiIHk9IjIzIiB3aWR0aD0iNDY2IiBoZWlnaHQ9IjQ2NiIgcng9Ijk4IiBmaWxsPSJub25lIiBzdHJva2U9IiM3MEQyRjQiIHN0cm9rZS1vcGFjaXR5PSIuMjUiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxjaXJjbGUgY3g9IjIyNiIgY3k9IjIyMiIgcj0iMTUxIiBmaWxsPSJ1cmwoI2VhcnRoKSIvPgogIDxnIGNsaXAtcGF0aD0idXJsKCNnbG9iZSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0RDRjhGRiIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLW9wYWNpdHk9Ii43OCI+CiAgICA8ZWxsaXBzZSBjeD0iMjI2IiBjeT0iMjIyIiByeD0iNjIiIHJ5PSIxNTEiLz4KICAgIDxwYXRoIGQ9Ik03NSAyMjJIMzc3IE05MCAxNTZRMjI2IDIwNSAzNjIgMTU2IE05MCAyODhRMjI2IDIzOSAzNjIgMjg4Ii8+CiAgPC9nPgogIDxjaXJjbGUgY3g9IjIyNiIgY3k9IjIyMiIgcj0iMTUxIiBmaWxsPSJub25lIiBzdHJva2U9IiNGMEZDRkYiIHN0cm9rZS13aWR0aD0iMTIiLz4KICA8cGF0aCBkPSJNMTIxIDI2MUMxNTggMjUxIDE3NiAxOTAgMjE5IDE4NFMyOTUgMTY2IDMyNSAxMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRDE3OCIgc3Ryb2tlLXdpZHRoPSIxMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtZGFzaGFycmF5PSIxNiAxOSIvPgogIDxnIGZpbGw9IiNGRkQxNzgiIHN0cm9rZT0iIzE0NDk3OCIgc3Ryb2tlLXdpZHRoPSI1Ij4KICAgIDxjaXJjbGUgY3g9IjEyMSIgY3k9IjI2MSIgcj0iMTYiLz48Y2lyY2xlIGN4PSIyMTkiIGN5PSIxODQiIHI9IjE2Ii8+PGNpcmNsZSBjeD0iMzI1IiBjeT0iMTIwIiByPSIxNiIvPgogIDwvZz4KICA8Y2lyY2xlIGN4PSIzNjciIGN5PSIzNjIiIHI9IjkyIiBmaWxsPSIjMEEzMTU5IiBzdHJva2U9IiMwQTMxNTkiIHN0cm9rZS13aWR0aD0iMTAiLz4KICA8Y2lyY2xlIGN4PSIzNjciIGN5PSIzNTYiIHI9IjgyIiBmaWxsPSJ1cmwoI2dvbGQpIiBzdHJva2U9IiNGRkU4QTgiIHN0cm9rZS13aWR0aD0iNSIvPgogIDxwYXRoIGQ9Ik0zNDkgMzE3UTM0MSAzMTIgMzQxIDMyMlYzOTFRMzQxIDQwMSAzNTAgMzk2TDQwNSAzNjJRNDE0IDM1NyA0MDUgMzUxWiIgZmlsbD0iIzExM0U2QSIvPgo8L3N2Zz4K" alt="ShDisplayViewer 图标"><div><strong>ShDisplayViewer</strong><small>基础场景与系统地图配置 · 本地部署 · 动态演练 · 关联动作</small></div></header>
+  <div class="print-cover"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPHRpdGxlPlNoRGlzcGxheVZpZXdlciDigJQg5LiJ57u05Zyw5Zu+5ryU57uD57O757ufPC90aXRsZT4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0idGlsZSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMjM2RkFGIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMEIyRjU4Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJlYXJ0aCIgY3g9Ii4zIiBjeT0iLjI1IiByPSIuODUiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMzZCQUREIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTI2MTlCIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnb2xkIiB4MT0iMCIgeTE9IjAiIHgyPSIuOCIgeTI9IjEiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjRkZFMDhDIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRjZBRjQyIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGNsaXBQYXRoIGlkPSJnbG9iZSI+PGNpcmNsZSBjeD0iMjI2IiBjeT0iMjIyIiByPSIxNTEiLz48L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSI0ODAiIGhlaWdodD0iNDgwIiByeD0iMTA1IiBmaWxsPSJ1cmwoI3RpbGUpIi8+CiAgPHJlY3QgeD0iMjMiIHk9IjIzIiB3aWR0aD0iNDY2IiBoZWlnaHQ9IjQ2NiIgcng9Ijk4IiBmaWxsPSJub25lIiBzdHJva2U9IiM3MEQyRjQiIHN0cm9rZS1vcGFjaXR5PSIuMjUiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxjaXJjbGUgY3g9IjIyNiIgY3k9IjIyMiIgcj0iMTUxIiBmaWxsPSJ1cmwoI2VhcnRoKSIvPgogIDxnIGNsaXAtcGF0aD0idXJsKCNnbG9iZSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0RDRjhGRiIgc3Ryb2tlLXdpZHRoPSIxMSIgc3Ryb2tlLW9wYWNpdHk9Ii43OCI+CiAgICA8ZWxsaXBzZSBjeD0iMjI2IiBjeT0iMjIyIiByeD0iNjIiIHJ5PSIxNTEiLz4KICAgIDxwYXRoIGQ9Ik03NSAyMjJIMzc3IE05MCAxNTZRMjI2IDIwNSAzNjIgMTU2IE05MCAyODhRMjI2IDIzOSAzNjIgMjg4Ii8+CiAgPC9nPgogIDxjaXJjbGUgY3g9IjIyNiIgY3k9IjIyMiIgcj0iMTUxIiBmaWxsPSJub25lIiBzdHJva2U9IiNGMEZDRkYiIHN0cm9rZS13aWR0aD0iMTIiLz4KICA8cGF0aCBkPSJNMTIxIDI2MUMxNTggMjUxIDE3NiAxOTAgMjE5IDE4NFMyOTUgMTY2IDMyNSAxMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRDE3OCIgc3Ryb2tlLXdpZHRoPSIxMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtZGFzaGFycmF5PSIxNiAxOSIvPgogIDxnIGZpbGw9IiNGRkQxNzgiIHN0cm9rZT0iIzE0NDk3OCIgc3Ryb2tlLXdpZHRoPSI1Ij4KICAgIDxjaXJjbGUgY3g9IjEyMSIgY3k9IjI2MSIgcj0iMTYiLz48Y2lyY2xlIGN4PSIyMTkiIGN5PSIxODQiIHI9IjE2Ii8+PGNpcmNsZSBjeD0iMzI1IiBjeT0iMTIwIiByPSIxNiIvPgogIDwvZz4KICA8Y2lyY2xlIGN4PSIzNjciIGN5PSIzNjIiIHI9IjkyIiBmaWxsPSIjMEEzMTU5IiBzdHJva2U9IiMwQTMxNTkiIHN0cm9rZS13aWR0aD0iMTAiLz4KICA8Y2lyY2xlIGN4PSIzNjciIGN5PSIzNTYiIHI9IjgyIiBmaWxsPSJ1cmwoI2dvbGQpIiBzdHJva2U9IiNGRkU4QTgiIHN0cm9rZS13aWR0aD0iNSIvPgogIDxwYXRoIGQ9Ik0zNDkgMzE3UTM0MSAzMTIgMzQxIDMyMlYzOTFRMzQxIDQwMSAzNTAgMzk2TDQwNSAzNjJRNDE0IDM1NyA0MDUgMzUxWiIgZmlsbD0iIzExM0U2QSIvPgo8L3N2Zz4K" alt=""><div class="kicker">SHDISPLAYVIEWER · USER DOCUMENTATION</div><div class="cover-title">ShDisplayViewer<br>使用操作说明书</div><div class="cover-rule"></div><div class="cover-meta">适用版本 1.0.2<br>Windows x86_64 · Ubuntu 22.04 及以上 x86_64<br>文档更新 2026-10-13<br>基础场景与系统地图配置 · 本地部署 · 动态演练 · 关联动作</div><div class="cover-company">青岛顺和信息技术有限公司<br>www.shunhexinxi.com</div></div>
+  <div class="layout"><nav aria-label="目录"><strong>使用操作说明书目录</strong><button onclick="window.print()">打印 / 保存 PDF</button><a href="#chapter-1">1. 运行前准备</a><a href="#chapter-2">2. 快速开始：播放青岛仓库火灾示例</a><a href="#chapter-3">3. 认识界面</a><a href="#chapter-4">4. 基础场景：系统图层与地图配置</a><a class="nav-sub" href="#section-4-1">4.1 先分清三类图层</a><a class="nav-sub" href="#section-4-2">4.2 找到实际使用的地图配置</a><a class="nav-sub" href="#section-4-3">4.3 配置系统 TMS 影像底图</a><a class="nav-sub" href="#section-4-4">4.4 只有 XYZ 瓦片地址时如何配置</a><a class="nav-sub" href="#section-4-5">4.5 通过界面选择已有 .earth</a><a class="nav-sub" href="#section-4-6">4.6 在界面叠加自定义 TMS 或本地栅格</a><a class="nav-sub" href="#section-4-7">4.7 显隐、图层覆盖与删除后仍显示</a><a class="nav-sub" href="#section-4-8">4.8 系统矢量图层如何配置</a><a class="nav-sub" href="#section-4-9">4.9 调整启动/Home视角与定位</a><a class="nav-sub" href="#section-4-10">4.10 地图配置完成后的检查清单</a><a href="#chapter-5">5. 制作自己的动态演练</a><a href="#chapter-6">6. 播放、讲解与演示副本</a><a href="#chapter-7">7. 配置关联动作与自动触发</a><a href="#chapter-8">8. 基础标记、本地部署与常用工具</a><a href="#chapter-9">9. 保存、迁移与配置文件</a><a href="#chapter-10">10. 常见问题</a><a href="#chapter-11">11. 部署交接与使用前检查</a></nav><main><h1>ShDisplayViewer 使用操作说明书</h1>
+<p>适用版本：1.0.2 ｜ 公开源码版 ｜ 文档更新：2026-10-13</p>
+<p>ShDisplayViewer 用于在地图上编辑部署方案，并按步骤演示事件、行动路线和力量部署。本说明按当前菜单和已实现行为编写，适合方案制作、现场演示和日常维护人员。</p>
+<p><strong>首次使用：先按第 4 章配置底图，再按第 2 章播放示例；制作自己的演练按第 5 章，本地标注按第 8 章。</strong> HTML 版可直接打开，PDF 版便于打印和分发；配置示例使用占位地址，需替换为自己的服务。</p>
+<h2 id="chapter-1">1. 运行前准备</h2>
+<h3 id="section-1-1">1.1 平台与网络</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Windows</td>
+<td>x86_64；当前已完成 Release 构建和桌面验证，使用带运行库的完整目录</td>
+</tr>
+<tr>
+<td>Ubuntu</td>
+<td>22.04 及以上、x86_64 为目标；已完成 Release 构建、自动测试和 Ubuntu 22.04 桌面冒烟验证，跨机器部署仍待验证</td>
+</tr>
+<tr>
+<td>图形环境</td>
+<td>地图需要可用的桌面 OpenGL 驱动；虚拟机或远程桌面环境需另行确认</td>
+</tr>
+<tr>
+<td>登录与权限</td>
+<td>不需要 IMS、登录或激活；没有用户角色权限配置</td>
+</tr>
+<tr>
+<td>本地工作</td>
+<td>编辑、保存和步骤演练使用本地数据；离线地图需自行准备可用的数据和配置</td>
+</tr>
+<tr>
+<td>主动联网</td>
+<td>在线地图、RTSP 和网页需要服务可达；服务自身的认证与访问限制仍然适用</td>
+</tr>
+</tbody></table>
+<p>运行目录应放在当前用户可写的位置。不要只复制 EXE，也不要删除同目录 DLL、插件或 Data。缺少地图或视频组件时，相应功能不能正常使用。</p>
+<h3 id="section-1-2">1.2 启动与项目位置</h3>
+<p>Windows 双击完整运行目录中的 <code>ShDisplayViewer.exe</code>。Ubuntu 已安装桌面快捷方式时，双击“ShDisplayViewer-三维地图演练系统”；也可在完整运行目录执行 <code>bash run.sh</code>。源码工程分别使用 <code>scripts/Run-Windows.cmd</code> 或 <code>bash scripts/run-ubuntu.sh</code>。</p>
+<p>公开源码模板不包含现场地图、高程和缓存。首次运行是空白离线地球，配置自己的合法地图源后才会显示对应影像。若使用完整运行包，请保留包内全部目录；Ubuntu 可执行 <code>bash install-desktop.sh</code> 为当前解压位置安装快捷方式。地图服务仍须可达，缓存只覆盖实际加载过的区域与级别。</p>
+<p><code>bash</code> 是执行 shell 脚本的解释器，<code>run.sh</code> 会设置所需运行库路径并启动程序。Ubuntu 建议使用快捷方式或该脚本，避免直接双击二进制时找不到库；路径含空格时用英文双引号包住整个路径。桌面提示“不受信任”时，在确认文件来自本部署包后使用“允许启动”。</p>
+<p>启动时项目选择顺序为：</p>
+<ol>
+<li>命令行 <code>--project</code> 指定目录。</li>
+<li>程序同目录的项目，须有 <code>shdisplay-project.json</code>。</li>
+<li>仅当程序旁没有项目清单时，使用程序目录下的 <code>Projects/default</code>。</li>
+</ol>
+<p>启动后默认选中“01 基础场景”。地图缓存和其他生成数据也跟随程序目录，具体目录见第 9.4 节；运行目录不可写时会提示调整位置。</p>
+<p>典型项目目录：</p>
+<pre><code class="language-text">项目目录/
+├── shdisplay-project.json
+└── Data/
+    ├── Config/         演练、标记、图层与环境配置
+    ├── earth/          地图入口及服务模板
+    ├── model/          模型与航线配置
+    └── assets/         通过界面导入并登记的资源
+</code></pre>
+<p>也可通过命令行启动指定项目：</p>
+<pre><code class="language-bat">ShDisplayViewer.exe --project &quot;C:\Exercises\MyProject&quot;
+</code></pre>
+<pre><code class="language-sh">./ShDisplayViewer --project &quot;$HOME/Exercises/MyProject&quot;
+</code></pre>
+<p>切换项目后，编辑和保存都作用于所打开的项目。项目是包含清单及数据的<strong>目录</strong>，不是单独的 XML 文件。</p>
+<h2 id="chapter-2">2. 快速开始：播放青岛仓库火灾示例</h2>
+<h3 id="section-2-1">2.1 找到或导入方案</h3>
+<ol>
+<li>启动程序，进入上方“03 动态演练”。</li>
+<li>在左侧选择“示例：青岛仓库火灾协同处置（虚构）”。</li>
+<li>若没有该方案，使用“项目 → 导入 Qt 动态标记 XML…”。</li>
+<li>选择含示例 XML 的 <code>examples/warehouse-fire</code> 目录。</li>
+<li>选择另一个空目录保存独立项目。导入后打开新项目，再配置自己的底图。</li>
+</ol>
+<p>导入创建新项目，不会合并到原项目。清洁构建的默认项目可能只有“示例：集结、部署、处置”三步骤方案，也可以先用它练习播放。</p>
+<h3 id="section-2-2">2.2 播放与观察</h3>
+<p>点击下方“播放”。火灾示例位于山东省青岛市地图范围，覆盖约东西 22 公里、南北 13 公里；共 8 个阶段、30 个标记，展示时间约 2 分 30 秒。每步第一个标记设有对应区域与尺度的视角，步骤切换时会飞行到相应视角。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>主要显示内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01 发现报警</td>
+<td>火点、仓库轮廓、关注区域、上报点</td>
+</tr>
+<tr>
+<td>02 疏散接应</td>
+<td>疏散箭头、集合点、门岗接应和人员核对</td>
+</tr>
+<tr>
+<td>03 首批力量前往</td>
+<td>首批出发点、进场路线、途中节点、到场位置</td>
+</tr>
+<tr>
+<td>04 到场部署</td>
+<td>指挥、作业、供水核验和入口秩序维护</td>
+</tr>
+<tr>
+<td>05 请求增援</td>
+<td>需求上报、支援出发、增援路线和途中节点</td>
+</tr>
+<tr>
+<td>06 增援协同</td>
+<td>集结交接、医疗协同、装备保障和信息汇总</td>
+</tr>
+<tr>
+<td>07 火情控制</td>
+<td>阶段状态更新、复核及后续看护</td>
+</tr>
+<tr>
+<td>08 清点复盘</td>
+<td>人员、装备清点和演练复盘</td>
+</tr>
+</tbody></table>
+<p>可暂停讲解，用“上一步”“下一步”或时间轴回看。名称中的阶段编号用于区分历史记录；先前阶段的标记会保留，出发点与到场点不代表两支队伍。</p>
+<p>场地、路线和处置情景均为虚构。路线表达前往和支援过程，不提供真实导航、车辆连续移动或火势仿真；播放时间也不是现场响应时限。详细讲解见<a href="../examples/warehouse-fire/README.md">火灾示例说明</a>。</p>
+<h2 id="chapter-3">3. 认识界面</h2>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 550" role="img" aria-labelledby="title desc">
+  <title id="title">ShDisplayViewer 界面分区示意</title>
+  <desc id="desc">顶部为项目与工作区，左侧为方案树，中间为地图，右侧为对象信息，底部为播放控制和时间轴。这是结构示意，不是运行截图。</desc>
+  <style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#eaf3fb;font-size:18px}.small{font-size:15px;fill:#bfd0df}.label{font-size:21px;font-weight:700}.box{fill:#153d5d;stroke:#407b9f;stroke-width:1.5}</style>
+  <rect width="1040" height="550" rx="16" fill="#0b2439"/>
+  <text x="26" y="35" class="label">界面分区</text><text x="790" y="34" class="small">结构示意 · 非运行截图</text>
+  <rect x="20" y="52" width="1000" height="48" rx="7" class="box"/>
+  <text x="38" y="82">项目 / 资源 / 帮助（保存与演示副本在项目菜单）　　标题栏：全屏 / 还原</text>
+  <rect x="20" y="110" width="1000" height="48" rx="7" class="box"/>
+  <text x="38" y="141">01 基础场景</text><text x="280" y="141">02 部署标注</text>
+  <rect x="519" y="117" width="252" height="34" rx="5" fill="#147b91"/><text x="536" y="141">03 动态演练</text>
+  <rect x="20" y="170" width="224" height="240" rx="7" class="box"/>
+  <text x="37" y="202" class="label">方案与步骤</text>
+  <text x="39" y="242">▾ 演练方案</text><text x="58" y="277">▾ 步骤</text><text x="80" y="312">标记 / 路线 / 区域</text>
+  <text x="37" y="374" class="small">选择对象 · 右键编辑</text>
+  <rect x="256" y="170" width="507" height="240" rx="7" fill="#edf5f6"/>
+  <path d="M283 340 L384 340 L434 286 L620 286" fill="none" stroke="#218aac" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M614 273 L637 286 L614 299Z" fill="#218aac"/>
+  <circle cx="350" cy="340" r="12" fill="#147b91"/><circle cx="640" cy="286" r="15" fill="#e46a48"/>
+  <text x="292" y="212" style="fill:#14374b;font-size:23px;font-weight:700">地图与部署态势</text>
+  <text x="292" y="240" style="fill:#3f5968;font-size:16px">浏览 · 绘制 · 镜头切换</text>
+  <text x="286" y="384" style="fill:#3f5968;font-size:15px">路线与点位仅用于界面示意</text>
+  <rect x="775" y="170" width="245" height="240" rx="7" class="box"/>
+  <text x="794" y="202" class="label">对象信息</text><text x="794" y="243">名称与说明</text><text x="794" y="277">属性与视角信息</text>
+  <rect x="20" y="423" width="1000" height="75" rx="7" class="box"/>
+  <text x="38" y="452">上一步　 播放 / 暂停　 下一步　 停止</text>
+  <path d="M40 476 H995" stroke="#407b9f" stroke-width="9"/><path d="M40 476 H405" stroke="#4bc4d4" stroke-width="9"/>
+  <circle cx="405" cy="476" r="7" fill="#fff"/><text x="740" y="451" class="small">步骤时间轴 · 定位与回看</text>
+  <text x="26" y="531" class="small">状态栏：绘制提示、当前步骤、保存结果与错误信息</text>
+</svg>
+</p>
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项目菜单</td>
+<td>新建、打开、保存项目（Ctrl+S）、导入导出、进入/退出演示副本；演示副本期间菜单项显示勾选</td>
+</tr>
+<tr>
+<td>蓝色标题栏</td>
+<td>两个平台共用；最小化、窗口全屏/还原、关闭，双击标题栏也可切换全屏</td>
+</tr>
+<tr>
+<td>01 基础场景</td>
+<td>图层、固定标记及基础空间信息</td>
+</tr>
+<tr>
+<td>02 部署标注</td>
+<td>普通本地部署标注与关联动作</td>
+</tr>
+<tr>
+<td>03 动态演练</td>
+<td>方案、步骤、动态标记及演练播放</td>
+</tr>
+<tr>
+<td>左侧树</td>
+<td>选择对象，右键编辑；可展开方案和步骤</td>
+</tr>
+<tr>
+<td>中央地图</td>
+<td>地图浏览、绘制标记、展示路线和部署态势</td>
+</tr>
+<tr>
+<td>右侧信息区</td>
+<td>查看选中对象的说明与相关属性</td>
+</tr>
+<tr>
+<td>下方控制与时间轴</td>
+<td>播放、暂停、停止、切换步骤和定位进度</td>
+</tr>
+<tr>
+<td>状态栏</td>
+<td>当前操作提示、保存结果和错误信息</td>
+</tr>
+</tbody></table>
+<p>地图通常可通过左键拖动平移、滚轮缩放；旋转、俯仰等操作以当前地图组件的交互设置为准。处于绘制模式时，鼠标用于放置控制点，请优先阅读状态栏提示。</p>
+<h2 id="chapter-4">4. 基础场景：系统图层与地图配置</h2>
+<h3 id="section-4-1">4.1 先分清三类图层</h3>
+<p>进入“01 基础场景”，展开左侧树。当前界面直接列出“系统图层”“自定义图层”等节点，不需要寻找旧客户端的“图层”父节点。</p>
+<pre><code class="language-text">基础场景
+├─ 系统图层
+│  ├─ 地图配置图层       来自当前 .earth
+│  └─ 系统矢量图层（N）  来自 featureConfig.xml
+└─ 自定义图层
+   ├─ 影像图层
+   ├─ 高程图层
+   └─ 矢量图层
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>要做的事</th>
+<th>操作位置与文件</th>
+<th>保存内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>配置“系统图层”中的底图、地形服务</td>
+<td><code>systemConfig.xml</code> 指向的 <code>.earth</code>；见 4.2～4.4</td>
+<td>图层定义及服务地址在 <code>.earth</code>，界面显隐/不透明度快照在 <code>fixed-spatial.xml</code></td>
+</tr>
+<tr>
+<td>添加国境线、省市界、地名等系统矢量</td>
+<td><code>Data/Config/featureConfig.xml</code>；见 4.8</td>
+<td>定义和样式在该文件，界面显示状态由兼容快照保留</td>
+</tr>
+<tr>
+<td>不改 .earth，直接在界面叠加一个图层</td>
+<td>“自定义图层”；见 4.6</td>
+<td><code>Data/Config/customLayerConfig.xml</code></td>
+</tr>
+</tbody></table>
+<p><strong>界面新增 TMS 会进入“自定义图层”，不会自动写入“系统图层”的 .earth。</strong> 系统图层可取消勾选隐藏；不能在树中用“删除”修改其定义。移除系统地图层应修改实际使用的 .earth，移除系统矢量应修改 featureConfig.xml，再重新打开项目。</p>
+<h3 id="section-4-2">4.2 找到实际使用的地图配置</h3>
+<ol>
+<li>确定当前项目目录：程序默认读同目录项目；如果通过“打开项目”、<code>--project</code> 或演示副本切换过，配置属于切换后的项目。</li>
+<li>用文本编辑器打开该项目的 <code>Data/Config/systemConfig.xml</code>，找到 <code>&lt;common&gt;</code> 的 <code>earth</code> 属性。</li>
+<li>根据下表找到真正的 .earth 文件。<strong>不要凭文件名认定程序一定使用某个固定 .earth。</strong> 公开模板默认使用 <code>FreeEarth_flat.earth</code>。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>earth 示例值</th>
+<th>查找位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>earth/FreeEarth_flat.earth</code></td>
+<td>公开模板默认入口，位于当前项目 <code>Data/earth/FreeEarth_flat.earth</code></td>
+</tr>
+<tr>
+<td><code>earth/Earth_flat.earth</code></td>
+<td>自行改名后的示例，须同步修改主配置并提供该文件</td>
+</tr>
+<tr>
+<td><code>earth/examples/HttpTms.earth</code></td>
+<td>当前项目 <code>Data/earth/examples/HttpTms.earth</code></td>
+</tr>
+<tr>
+<td>本机的完整绝对路径</td>
+<td>直接打开该路径；它可能在程序目录之外</td>
+</tr>
+</tbody></table>
+<p>例如以下是原节点的字段示意，修改时保留自己原有的其他属性：</p>
+<pre><code class="language-xml">&lt;common earth=&quot;earth/FreeEarth_flat.earth&quot; title=&quot;ShDisplayViewer&quot;/&gt;
+</code></pre>
+<p>推荐的 <code>earth/...</code> 相对路径以项目 <strong>Data</strong> 为基准，不以 <code>Data/Config</code> 为统一基准。<code>.earth</code> 内的本地 <code>&lt;url&gt;</code> 相对路径通常以 <strong>该 .earth 所在目录</strong> 为基准。示例：<code>.earth</code> 位于 <code>Data/earth/</code>，数据位于 <code>Data/assets/world.tif</code>，则该图层的 URL 写 <code>../assets/world.tif</code>。</p>
+<p>通过自定义图层添加本地数据时，URL 相对路径由驱动按启动工作目录读取。若文件放在程序旁的 <code>map/my-elevation</code>，URL 可以写 <code>map/my-elevation</code>；这只是目录布局示例，公开源码不提供该数据。Ubuntu 使用 run.sh，Windows 快捷方式的“起始位置”应设为程序目录。Linux 文件名区分大小写；瓦片格式、坐标系、行方向和级别必须按自己的数据填写。</p>
+<p>手工修改前退出程序并备份将要编辑的 XML/.earth。项目导出不自动收集外部地图文件及地图瓦片，必要的外部文件应另外保存。若设置了 <code>SHDISPLAY_EARTH_FILE</code>，它会优先于主配置；先检查是否存在这个环境变量。</p>
+<h3 id="section-4-3">4.3 配置系统 TMS 影像底图</h3>
+<p>TMS 使用 XML 元数据描述瓦片格式、坐标系和级别，再按元数据访问瓦片。建议填写明确的 <code>tms.xml</code> 或 <code>tilemapresource.xml</code> 地址，避免把目录网页当成地图元数据。依据：<a href="https://docs.osgearth.org/en/latest/tms.html">osgEarth TMS 文档</a>。</p>
+<ol>
+<li>向地图服务提供方取得元数据地址；浏览器打开后应看到 <code>TileMap</code> 等 XML 内容，而不是管理页面、登录页面或错误提示。</li>
+<li>关闭 Viewer，打开 4.2 确认的 .earth。若它已有图层，将下面的 <code>TMSImage</code> 加入已有 <code>&lt;map&gt;</code> 内；不要把整个现有文件替换掉。</li>
+<li>把示例 URL 换成真实地址。若使用 <code>Data/earth/examples/HttpTms.earth</code> 模板，移除所需图层外的 <code>&lt;!-- ... --&gt;</code> 注释；注释中的图层不会加载。</li>
+<li>保存 UTF-8 文件，启动 Viewer，进入“基础场景 → 系统图层 → 地图配置图层”，检查新图层名称，勾选显示。</li>
+<li>在图层“属性”中检查不透明度，首次验证设为 100%。用“视角 → 视点定位”定位到服务覆盖区域，观察影像是否出现并可正常缩放。</li>
+</ol>
+<p>以下为独立的最小地图文件示例，适合另建 .earth 后选择加载：</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;map name=&quot;演练底图&quot; type=&quot;geocentric&quot; version=&quot;2&quot;&gt;
+  &lt;options&gt;&lt;lighting&gt;false&lt;/lighting&gt;&lt;/options&gt;
+  &lt;TMSImage name=&quot;HTTP TMS 底图&quot;&gt;
+    &lt;url&gt;https://maps.example.invalid/TMS/WGS84/tms.xml&lt;/url&gt;
+  &lt;/TMSImage&gt;
+&lt;/map&gt;
+</code></pre>
+<p><code>example.invalid</code> 是占位域名，不能直接使用。含 <strong>20261009 TMS 修复</strong>的 FreeEarthSDK 可以读取 <code>TileSet href=&quot;0&quot;</code> 等常见相对地址变体；例如元数据位于 <code>.../WGS84/tms.xml</code>，相对级别目录 <code>0</code> 以该元数据目录解析，不要求修改现有服务端 XML。TMS 1.0 文档要求 href 为绝对 URL，本项目的相对地址处理是兼容能力，见 <a href="https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification">TMS 文档</a>。</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>含义及填写方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>map name</code></td>
+<td>地图配置名称，供辨识使用；不是服务地址</td>
+</tr>
+<tr>
+<td><code>type=&quot;geocentric&quot;</code></td>
+<td>本项目模板采用的地球场景类型</td>
+</tr>
+<tr>
+<td><code>version=&quot;2&quot;</code></td>
+<td>当前模板使用的 .earth 结构版本；不是软件版本或瓦片级别</td>
+</tr>
+<tr>
+<td><code>lighting=false</code></td>
+<td>关闭地图光照调制，便于检查影像原始明暗</td>
+</tr>
+<tr>
+<td><code>TMSImage</code></td>
+<td>TMS 影像图层；高程使用 <code>TMSElevation</code>，不能把普通图片地址当高程数据</td>
+</tr>
+<tr>
+<td>图层 <code>name</code></td>
+<td>左侧地图配置图层中的名称；不同图层建议使用不同名称</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>元数据地址或本地元数据文件，通常包含 <code>tms.xml</code> 或 <code>tilemapresource.xml</code></td>
+</tr>
+</tbody></table>
+<p><strong>元数据字段用于核对服务，不是需要逐项抄入 .earth 的配置项。</strong></p>
+<table>
+<thead>
+<tr>
+<th>元数据项</th>
+<th>检查内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SRS</code></td>
+<td>服务坐标参考系，例如 <code>EPSG:4326</code>；不可只从目录名猜测</td>
+</tr>
+<tr>
+<td><code>BoundingBox</code></td>
+<td>覆盖范围；镜头须定位到范围内</td>
+</tr>
+<tr>
+<td><code>Origin</code></td>
+<td>瓦片坐标的参考原点</td>
+</tr>
+<tr>
+<td><code>TileFormat</code></td>
+<td>宽、高、扩展名及媒体类型，应与实际瓦片一致</td>
+</tr>
+<tr>
+<td><code>TileSets profile</code></td>
+<td>切片方案，如 <code>global-geodetic</code>；影响瓦片组织方式</td>
+</tr>
+<tr>
+<td><code>TileSet order</code></td>
+<td>该组瓦片的级别；检查是否包含所需缩放级别</td>
+</tr>
+<tr>
+<td><code>TileSet href</code></td>
+<td>级别目录地址，可为相对或绝对地址；不是单张瓦片 URL</td>
+</tr>
+<tr>
+<td><code>units-per-pixel</code></td>
+<td>该级别的像元分辨率，单位随服务坐标系变化</td>
+</tr>
+</tbody></table>
+<h3 id="section-4-4">4.4 只有 XYZ 瓦片地址时如何配置</h3>
+<p>XYZ 不依赖上述 TMS 元数据，应提供含 <code>{z}</code>、<code>{x}</code>、<code>{y}</code> 或 <code>{-y}</code> 的地址模板，并明确切片方案。不能把这个模板放进 <code>TMSImage</code>，也不能把 <code>tms.xml</code> 放进 <code>XYZImage</code>。依据：<a href="https://docs.osgearth.org/en/latest/xyz.html">osgEarth XYZ 文档</a>。</p>
+<pre><code class="language-xml">&lt;map name=&quot;XYZ 底图&quot; type=&quot;geocentric&quot; version=&quot;2&quot;&gt;
+  &lt;options&gt;&lt;lighting&gt;false&lt;/lighting&gt;&lt;/options&gt;
+  &lt;XYZImage name=&quot;XYZ 影像&quot;&gt;
+    &lt;url&gt;https://maps.example.invalid/tiles/{z}/{x}/{y}.png&lt;/url&gt;
+    &lt;profile&gt;spherical-mercator&lt;/profile&gt;
+  &lt;/XYZImage&gt;
+&lt;/map&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>字段或格式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>{z}</code></td>
+<td>缩放级别</td>
+</tr>
+<tr>
+<td><code>{x}</code></td>
+<td>瓦片列号</td>
+</tr>
+<tr>
+<td><code>{y}</code></td>
+<td>直接使用驱动生成的行号</td>
+</tr>
+<tr>
+<td><code>{-y}</code></td>
+<td>将该级别行号翻转后请求，适用于服务与驱动行号方向相反的情况</td>
+</tr>
+<tr>
+<td><code>profile=spherical-mercator</code></td>
+<td>常见 Web Mercator 切片方案，常对应 EPSG:3857 服务</td>
+</tr>
+<tr>
+<td><code>profile=global-geodetic</code></td>
+<td>经纬度切片方案；仍须确认级别和行列组织与服务匹配</td>
+</tr>
+</tbody></table>
+<p>请让服务提供方确认 <code>profile</code>、行号方向和扩展名，不要只因为 URL 中出现 WGS84 就套用模板。若明确使用本项目已验证的 WGS84 TMS 瓦片组织，改为 XYZ 时通常需 <code>global-geodetic</code> 与 <code>{-y}</code>；<strong>优先保留原 TMS 元数据方式</strong>。</p>
+<p>XML 中查询字符串的 <code>&amp;</code> 必须写成 <code>&amp;amp;</code>。保存后重新打开项目或重启，勾选图层并定位检查。<code>.earth</code> 本地路径及图层顺序的一般规则见 <a href="https://docs.osgearth.org/en/latest/earthfile.html">osgEarth Earth File 文档</a>。</p>
+<h3 id="section-4-5">4.5 通过界面选择已有 .earth</h3>
+<ol>
+<li>打开“资源 → 选择地图 .earth 配置…”。</li>
+<li>选择已经制作好的 .earth，程序会保存配置并重新打开项目。</li>
+<li>进入基础场景，检查系统地图图层名称、显隐、不透明度与覆盖范围。</li>
+</ol>
+<p>该操作将所选文件的<strong>绝对路径</strong>写入当前项目的 <code>systemConfig.xml</code>，不会自动复制文件引用的瓦片、模型或其他数据。换电脑后应重新选择地图配置，或重新整理可访问的路径。手改后仅选择“项目 → 保存项目”不会重新解析 .earth；应重新打开项目或重启。</p>
+<h3 id="section-4-6">4.6 在界面叠加自定义 TMS 或本地栅格</h3>
+<ol>
+<li>进入“基础场景”，在“自定义图层 → 影像图层”节点上右键，选择“添加影像”。需要地形时，在“高程图层”节点右键选择“添加高程”。</li>
+<li>输入图层名称。联网 TMS 选择“切片数据”，再把驱动从默认的 <code>flatgis</code> 改成 <code>tms</code>。</li>
+<li>在“路径”输入元数据地址。联网地址可直接粘贴；“浏览”在切片模式用于选择本地目录，不是输入网址的入口。</li>
+<li>首次验证保持不透明度为 1.0/100%，可先不启用缓存。点击“确定”，新图层出现在对应的自定义图层分组。</li>
+<li>勾选显示并定位到覆盖区域，完成后“项目 → 保存项目”。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>表单项</th>
+<th>使用方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>图层名称</td>
+<td>自定义名称，便于与系统底图区分</td>
+</tr>
+<tr>
+<td>原始数据</td>
+<td>本地 GeoTIFF 等栅格文件；驱动为 <code>gdal</code></td>
+</tr>
+<tr>
+<td>切片数据</td>
+<td>选择 <code>tms</code> 或 <code>flatgis</code>；当前新增表单不提供 XYZ，XYZ 用 .earth 配置</td>
+</tr>
+<tr>
+<td>路径</td>
+<td>网络地址或数据路径；普通相对路径以项目 Data 解析</td>
+</tr>
+<tr>
+<td>图层透明 / 不透明度</td>
+<td>影像层启用后可调 0～1；0 完全透明，1 完全不透明。属性窗口对应 0～100%</td>
+</tr>
+<tr>
+<td>启用缓存</td>
+<td>启用后填写缓存名称；缓存路径固定为程序旁的 <code>cache/earth</code>，自动创建，显示位置只读</td>
+</tr>
+</tbody></table>
+<p>本地 TMS 目录须有 <code>tms.xml</code> 或 <code>tilemapresource.xml</code>；程序找到后使用该文件。FlatGIS 是另一种数据驱动，不能仅因文件夹结构类似就当成标准 TMS。高程应使用真正的高程数据，单有影像不会形成地形起伏。</p>
+<h3 id="section-4-7">4.7 显隐、图层覆盖与删除后仍显示</h3>
+<p>勾选父节点会同时改变这一组图层的可见性；定位与显示是两件事，图层可见不代表镜头已在其覆盖区域。多个不透明影像叠加时，上层可能覆盖下层，测试时可先只启用一层。</p>
+<p>系统地图层的“属性”不能修改服务数据源。需要换地址、改 .earth 中的图层名称或删除图层时，应编辑实际加载的 .earth，再重新打开项目。当前 SDK 返回的图层清单用于更新树，<code>fixed-spatial.xml</code> 是显隐快照，不是底图定义主文件。</p>
+<p>若删改后旧名称还在，依次检查：修改的是否为 <code>common earth</code> 指向文件；是否在另一个项目/演示副本；是否有 <code>SHDISPLAY_EARTH_FILE</code> 覆盖；新文件是否保存且无 XML 语法错误；是否重新打开项目。不要先删除整个 Data 或地图缓存来排查。</p>
+<h3 id="section-4-8">4.8 系统矢量图层如何配置</h3>
+<p>“系统矢量图层（N）”来自 <code>Data/Config/featureConfig.xml</code>，与 .earth 底图不同；N 不是固定 10。若显示 0，表示当前项目没有配置这组系统矢量数据，影像底图仍可正常工作。</p>
+<ol>
+<li>准备合法可用的矢量数据，例如边界线 Shapefile；保留同名 <code>.shp</code>、<code>.shx</code>、<code>.dbf</code>、<code>.prj</code> 等配套文件。</li>
+<li>退出程序，备份 <code>featureConfig.xml</code>，在 <code>&lt;layers&gt;</code> 内添加完整的 <code>&lt;layer&gt;</code>。</li>
+<li>设置图层名称、数据源、样式和可见范围。下面是边界线示例，数据文件须自行准备。</li>
+<li>重开项目，展开“系统图层 → 系统矢量图层”，勾选图层。原有显示快照可能覆盖 XML 初始可见值，必要时在界面重新勾选。</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;layers&gt;
+  &lt;layer name=&quot;演练区域边界&quot;&gt;
+    &lt;features&gt;&lt;url&gt;../shpFile/demo/boundary.shp&lt;/url&gt;&lt;/features&gt;
+    &lt;layout&gt;
+      &lt;level style=&quot;default&quot; min_range=&quot;0&quot; max_range=&quot;100000000&quot;/&gt;
+      &lt;tile_size_factor&gt;15&lt;/tile_size_factor&gt;
+    &lt;/layout&gt;
+    &lt;styles&gt;&lt;style&gt;&lt;![CDATA[
+      stroke: #ffcc66;
+      stroke-width: 1.5;
+    ]]&gt;&lt;/style&gt;&lt;/styles&gt;
+    &lt;visible&gt;true&lt;/visible&gt;
+  &lt;/layer&gt;
+&lt;/layers&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>layer name</code></td>
+<td>系统矢量图层名称，不可为空</td>
+</tr>
+<tr>
+<td><code>features/url</code></td>
+<td>数据源；上述 <code>../shpFile/...</code> 相对 Config 目录，指向项目 <code>Data/shpFile/...</code></td>
+</tr>
+<tr>
+<td><code>min_range / max_range</code></td>
+<td>最小/最大可见视距，单位米；范围外可能不显示</td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td>配置样式名；当前示例使用 <code>default</code></td>
+</tr>
+<tr>
+<td><code>tile_size_factor</code></td>
+<td>矢量布局参数，示例用 15；一般无需初次调整</td>
+</tr>
+<tr>
+<td><code>stroke / stroke-width</code></td>
+<td>线颜色和线宽；地名标签需另设文本样式及字体</td>
+</tr>
+<tr>
+<td><code>visible</code></td>
+<td>初始可见状态；已有界面快照可能优先使用已保存状态</td>
+</tr>
+</tbody></table>
+<p>名称、数据源和样式缺失会导致配置加载失败。文件路径区分大小写，尤其在 Ubuntu 上；中文地名还需确认字符编码和可用字体。只想添加一份普通矢量时，可在“自定义图层 → 矢量图层”右键新增，驱动为 <code>ogr</code>，无需维护系统矢量 XML。</p>
+<h3 id="section-4-9">4.9 调整启动/Home视角与定位</h3>
+<p>地图工具栏“视角 → 视点定位”可输入经度、纬度、“视点高度”和飞行时间定位；这里的“视点高度”用于定位时的观察视距。日常优先使用这个入口，随后“保存视角”可保存一个可重复调用的视点。</p>
+<p>当前源码在地图首次显示时及 Home 操作中使用 <code>systemConfig.xml</code> 的 <code>&lt;viewPoints&gt;&lt;viewPointEnd .../&gt;&lt;/viewPoints&gt;</code>。<code>viewPointBegin</code> 保留兼容，不能只修改它来期待当前版本改变启动镜头。需要手动设置时，退出程序后在原有文件中修改 <code>viewPointEnd</code> 的完整六项数值：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>lon / lat</code></td>
+<td>视角焦点的经度/纬度，单位度</td>
+</tr>
+<tr>
+<td><code>hei</code></td>
+<td>焦点高度，单位米，不等同于相机高度或视距</td>
+</tr>
+<tr>
+<td><code>range</code></td>
+<td>相机到焦点的视距，单位米，必须大于 0</td>
+</tr>
+<tr>
+<td><code>heading</code></td>
+<td>航向角，单位度</td>
+</tr>
+<tr>
+<td><code>pitch</code></td>
+<td>俯仰角，单位度；-90 近于俯视</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td>兼容保存字段；当前 Home 回位采用固定 3 秒，首次显示直接定位</td>
+</tr>
+</tbody></table>
+<p>完成后重启并检查。启动/Home视角与演练步骤、标记视角分别保存；设置 Home 不会替你配置每个演练标记的镜头。</p>
+<h3 id="section-4-10">4.10 地图配置完成后的检查清单</h3>
+<ol>
+<li>当前项目和实际 .earth 路径正确，服务返回地图元数据而不是网页或错误信息。</li>
+<li>左侧出现预期图层，勾选开启，不透明度大于 0；不要被另一个上层影像覆盖。</li>
+<li>镜头位于覆盖区域；至少检查一个远景和一个较近视角，等待瓦片完成加载。</li>
+<li>在服务支持级别内缩放无明显错位、上下颠倒或缺片，坐标系和 Y 方向正确。</li>
+<li>关闭后重新打开，同一项目的图层与显示状态仍能恢复。</li>
+</ol>
+<p>“地图引擎已初始化”和 HTTP 200 都不等于“地图正确加载”，最终以对应区域的实际影像为准。</p>
+<h2 id="chapter-5">5. 制作自己的动态演练</h2>
+<h3 id="section-5-1">5.1 建立项目和方案</h3>
+<p>建议先“项目 → 另存为…”到空目录，再改造示例。也可“项目 → 新建演练项目…”选择空目录创建项目；新项目自带入门示例，可保留或右键删除。</p>
+<ol>
+<li>进入“动态演练”，在左侧树空白处、方案或步骤上右键。</li>
+<li>选择“新建预案”。界面中的“预案”就是本说明所说的“方案”。</li>
+<li>填写名称与说明，按需要设置“循环演练”。</li>
+<li>点击“保存”。</li>
+</ol>
+<p>建议名称表达事件与目的，例如“仓库火情：首批响应与增援协同”，说明中记录场景假设及讲解重点。</p>
+<h3 id="section-5-2">5.2 添加步骤和编排时间</h3>
+<p>右键方案，选择“添加演练步骤”，设置名称、演练内容与显示模式。</p>
+<table>
+<thead>
+<tr>
+<th>设置</th>
+<th>同时显示</th>
+<th>顺序显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>标记出现</td>
+<td>本步骤全部标记立即显示</td>
+<td>按保存顺序逐个累加</td>
+</tr>
+<tr>
+<td>时间设置</td>
+<td>设置“总持续时间”</td>
+<td>设置“每个标记持续时间”</td>
+</tr>
+<tr>
+<td>步骤总时长</td>
+<td>所设总持续时间</td>
+<td>标记数 × 每标记时长</td>
+</tr>
+<tr>
+<td>视角来源</td>
+<td>步骤“推荐视角”</td>
+<td>每个标记保存的视角</td>
+</tr>
+<tr>
+<td>适用情况</td>
+<td>展示完整部署态势</td>
+<td>按讲解节奏展示事件、路线和节点</td>
+</tr>
+</tbody></table>
+<p>顺序模式每个时段包括“镜头飞行 → 提示闪烁 0.5 秒 → 保持”。例如每标记 5 秒、飞行 1 秒，保持约 3.5 秒；4 个标记合计 20 秒。<strong>飞行时间加 0.5 秒不能超过每标记时长</strong>，否则播放提示冲突。空的顺序步骤播放时跳过。</p>
+<p>同时模式中，调整地图并点击“使用当前地图视角”设置推荐视角。切换到顺序模式后，应设置各标记自己的视角。</p>
+<h3 id="section-5-3">5.3 添加点、区域和路线</h3>
+<ol>
+<li>右键目标步骤，选择“添加动态标记”。</li>
+<li>“添加标记”中选择点、线、多边形等；“添加标绘”中选择直箭头、折线箭头等。</li>
+<li>点标记通常单击地图定位。多控制点图形按状态栏提示左键逐点添加、右键结束；部分图形达到指定点数会自动完成。</li>
+<li>完成绘制后，在属性窗口填写名称、描述、样式、视角和关联动作。</li>
+<li>确认保存；取消属性窗口会丢弃本次新增草稿。</li>
+</ol>
+<p>用点表示火点、队伍和保障位置，用多边形表示区域，用箭头表示行动方向。顺序模式按同一步骤内的树形列表顺序播放。要调整顺序，右键目标标记选择“上移”，该标记会与上一个标记交换并立即保存；第一个标记的“上移”不可用。上移只影响当前步骤，不支持拖拽排序。</p>
+<h3 id="section-5-4">5.4 设置标记视角</h3>
+<ol>
+<li>右键标记，打开“属性 → 视角”。</li>
+<li>保持属性窗口打开，调整地图至期望画面。</li>
+<li>点击“获取当前视角”，刷新当时的经度、纬度、高度、视距、俯仰角和航向角。</li>
+<li>再调整地图，可再次点击获取，无须关闭重开窗口。</li>
+<li>检查飞行时间，点击“确定”保存。</li>
+</ol>
+<p>当前实现获取视角时将飞行时间设为 1 秒；需要其他时长时，在获取后修改。视距是观察范围，不是标记的地面尺寸。读取失败会提示并保留原值。</p>
+<h3 id="section-5-5">5.5 编辑与删除</h3>
+<p>右键方案、步骤或标记选择“属性”或“删除”。删除方案会连同其步骤和标记一起删除；删除步骤会删除其中的标记。当前没有通用撤销历史，较大修改前先另存或导出。</p>
+<p>多数对象在属性确认后即写入项目；完成一轮编辑后仍建议选择“项目 → 保存项目”，也可按 Ctrl+S。程序运行时不要同时手改配置 XML，以免后续界面保存覆盖外部修改。</p>
+<h2 id="chapter-6">6. 播放、讲解与演示副本</h2>
+<h3 id="section-6-1">6.1 播放控制</h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>播放 / 暂停</td>
+<td>开始或暂停，继续时保留已用时间</td>
+</tr>
+<tr>
+<td>上一步 / 下一步</td>
+<td>切换步骤，便于逐段讲解</td>
+</tr>
+<tr>
+<td>时间轴定位</td>
+<td>定位步骤及进度，重建该时刻的标记和视角</td>
+</tr>
+<tr>
+<td>停止</td>
+<td>结束播放并隐藏动态标记，不删除方案</td>
+</tr>
+<tr>
+<td>循环演练</td>
+<td>在方案属性中启用，末步完成后从首步继续</td>
+</tr>
+<tr>
+<td>标题栏全屏 / 还原</td>
+<td>点击标题栏原最大化位置的按钮，切换整个应用窗口全屏并保留标题栏；再次点击还原，F11 也可切换，Esc 可退出</td>
+</tr>
+<tr>
+<td>地图全屏</td>
+<td>地图工具栏中的按钮使地图占满屏幕；再次点击、按 Esc 或 F11 可退出，并恢复原来的面板和窗口布局</td>
+</tr>
+</tbody></table>
+<p>已完成步骤的标记继续保留，形成累积态势。表达状态变更时，请用阶段编号和明确名称区分历史记录。关联动作可选鼠标点击或自动触发；自动动作在播放到所属标记出现时执行，演练继续播放。闪烁、暂停后继续不会重复执行；重新播放或循环会再次执行。预览和拖动时间轴不触发，继续播放只执行定位点之后新出现标记的动作。</p>
+<h3 id="section-6-2">6.2 演示副本</h3>
+<p>选择“项目 → 进入 / 退出演示副本”。程序先保存原项目，再创建临时副本；菜单项勾选表示当前处于演示副本，其中的编辑和保存只影响副本。再次选择该菜单项返回原项目。</p>
+<p>想保留现场调整，须在退出前“项目 → 另存为…”到空目录；成功后进入保存的新项目。直接退出演示副本会返回原项目，临时修改不保留。演示副本期间不能直接新建、打开或导入其他项目。</p>
+<h2 id="chapter-7">7. 配置关联动作与自动触发</h2>
+<p>打开标记“属性 → 关联”，点击“添加动作”。一个标记可配置多个动作，按列表顺序执行启用项；选中行后可“删除选中动作”。</p>
+<table>
+<thead>
+<tr>
+<th>表格列</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启用 / 名称</td>
+<td>勾选是否执行，填写识别名称</td>
+</tr>
+<tr>
+<td>动作</td>
+<td>RTSP 视频、打开网页或打开程序</td>
+</tr>
+<tr>
+<td>地址 / 程序路径</td>
+<td>统一填写 RTSP、网页 URL 或当前平台的程序路径</td>
+</tr>
+<tr>
+<td>程序参数</td>
+<td>仅供本地程序使用，不在这里填写 RTSP 地址</td>
+</tr>
+<tr>
+<td>触发</td>
+<td>鼠标点击或自动触发；自动触发用于动态演练</td>
+</tr>
+<tr>
+<td>恢复</td>
+<td>无动作、延时10秒关闭、延时30秒关闭、延时1分钟关闭；网页固定为无动作</td>
+</tr>
+</tbody></table>
+<h3 id="section-7-1">7.1 RTSP 视频</h3>
+<p>选择“RTSP 视频”，填写自己的完整地址。格式示意 <code>rtsp://camera.example.invalid/live</code> 仅为占位，不能连接。界面也接受 rtsps 地址，实际可用性由目标服务和视频组件验证。</p>
+<p>鼠标点击动作先暂停演练，再打开视频，关闭后手动继续。自动动作在标记出现时打开视频，演练继续播放。选延时恢复后，窗口从打开时开始倒计时，到期关闭并停止视频；手动提前关闭会取消计时。计时不随演练暂停或停止。当前连接使用 TCP；编码、网络和认证均影响播放。没有离线视频文件要求，也无需 IMS 摄像机目录。</p>
+<h3 id="section-7-2">7.2 网页</h3>
+<p>选择“打开网页”，填写完整 HTTP/HTTPS 地址。按所选触发方式通过系统默认浏览器打开，离线环境中在线网页可能无法访问。网页不提供延时关闭，恢复固定为“无动作”。</p>
+<h3 id="section-7-3">7.3 本地程序</h3>
+<p>选择“打开程序”，在统一的“地址 / 程序路径”中填写当前平台路径，另填程序参数。新动作使用单一路径，换到另一平台时需检查并调整路径。</p>
+<p>绝对路径指向本机程序；相对路径以当前项目 Data 为起点。程序不会随项目导出自动复制，目标电脑必须具备文件，Ubuntu 下还需可执行权限。鼠标动作启动前确认；含自动程序动作的预案在播放前一次确认，之后按标记出现自动启动。</p>
+<p>延时恢复仅管理本次启动的进程，到期先请求关闭，1 秒后仍未退出则结束该进程。已有程序不受影响；复用已有实例或转交子进程的应用可能无法自动关闭，请使用支持独立实例的程序或参数。</p>
+<h3 id="section-7-4">7.4 旧方案迁移</h3>
+<p>只执行上述三类动作。旧动作默认为鼠标点击、无恢复；旧 Windows/Ubuntu 双路径仍兼容，在统一字段显示当前平台路径，保存时保留另一平台原值。旧方案中的 IMS 专用动作不执行，并在关联编辑器保存时移除。RTSP 等地址如果含设备凭据，会随标记写入 XML，公开示例前应脱敏。</p>
+<h2 id="chapter-8">8. 基础标记、本地部署与常用工具</h2>
+<h3 id="section-8-1">8.1 基础场景的固定标记与标绘</h3>
+<ol>
+<li>进入“01 基础场景”，在左侧“标记图层”或“标绘图层”分组右键“添加文件夹”。</li>
+<li>在文件夹上右键“添加标记”或“添加标绘”，选择点、线、区域或箭头等类型。</li>
+<li>按地图状态栏提示完成控制点绘制；点通常单击定位，多点图形逐点添加并右键结束。</li>
+<li>在属性窗体设置标题、描述、样式、视角和关联动作，点击“确定”。</li>
+<li>通过树中复选框控制显隐，右键“属性”修改，右键“删除”移除。固定标记不属于演练步骤，停止动态演练也不会删除它。</li>
+</ol>
+<h3 id="section-8-2">8.2 部署标注的本地标记</h3>
+<ol>
+<li>进入“02 部署标注”，在“本地标注”根节点右键“添加文件夹”。</li>
+<li>在自己的文件夹上右键“添加标记”或“添加标绘”，选择所需类型；根节点本身主要用于建分组。</li>
+<li>完成地图绘制后填写属性。点标记在“样式”页的资源路径旁点击“浏览”可选择图片；相对资源路径以项目 Data 为基准。</li>
+<li>点击“确定”后标记进入树。检查“本地标注”、所属文件夹和标记都勾选显示，并定位到其位置。</li>
+<li>标记右键“定位”调用保存视角，右键“属性”再次编辑，右键“删除”移除。需要单击联动时，在关联页设置“鼠标点击”；自动触发用于动态演练中的标记。</li>
+</ol>
+<p>本地部署和动态标记使用同一属性窗体与尺寸规则，但保存位置不同：本地部署在 <code>squad-annotations.xml</code>，动态标记在 <code>dynamic-plans.xml</code>。不通过复制其中一个 XML 来替换另一个模块的数据。</p>
+<h3 id="section-8-3">8.3 常用地图工具</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>用途与条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基础场景 / 部署标注</td>
+<td>管理固定和普通本地标记，不随动态步骤逐个出现</td>
+</tr>
+<tr>
+<td>图层与视点</td>
+<td>管理数据显隐、样式及保存的观察位置</td>
+</tr>
+<tr>
+<td>测量与分析</td>
+<td>按工具测量距离、面积等；地形分析需有效高程数据</td>
+</tr>
+<tr>
+<td>环境</td>
+<td>时间、光照、雨雪雾等场景效果，不是气象或灾害预测</td>
+</tr>
+<tr>
+<td>飞行</td>
+<td>编辑航线与航点用于漫游，和步骤演练视角切换是不同功能</td>
+</tr>
+<tr>
+<td>地图黑板</td>
+<td>临时绘图辅助讲解，不替代需要保存的正式标记</td>
+</tr>
+</tbody></table>
+<p>环境操作：点击“环境”，按需开关光照、大气层、雨、雪、雾；点击“设置”编辑强度和时间等参数，先预览再保存。没有真实高程时，地形相关分析结果不能作为现场依据。</p>
+<p>截图操作：点击“工具 → 地图截图”，选择图片路径保存。飞行操作：点击“飞行”配置路线和航点，在资源齐全后运行；演练步骤的逐标记视角切换不要求使用飞行漫游模块。
+| 检查资源 | “资源 → 检查资源…”查看资源问题，不替代实际连通性测试 |</p>
+<p>工具表现取决于 SDK、驱动和数据。使用模型、贴图、粒子等外部资源前，应确认目标电脑能够加载。</p>
+<h2 id="chapter-9">9. 保存、迁移与配置文件</h2>
+<h3 id="section-9-1">9.1 各种保存操作的区别</h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项目 → 保存项目（Ctrl+S）</td>
+<td>写入当前项目；演示副本中只写入副本</td>
+</tr>
+<tr>
+<td>另存为</td>
+<td>复制到空目录，并切换到新项目</td>
+</tr>
+<tr>
+<td>导出演练项目</td>
+<td>复制到空目录，继续使用当前项目</td>
+</tr>
+<tr>
+<td>导入 Qt 动态标记 XML</td>
+<td>从源 Config 目录导入受支持文件为新项目；源文件不变</td>
+</tr>
+</tbody></table>
+<p>导出复制明确的配置及登记资源，不递归收集地图瓦片、缓存、外部程序或模型附属文件。外部 .earth 引用和服务地址需要在目标电脑重新检查。</p>
+<h3 id="section-9-2">9.2 导入单个资源</h3>
+<p>“资源 → 导入单个资源…”选择文件。程序复制到项目 Data/assets 并登记到清单，把相对路径复制到剪贴板，可粘贴到标记的资源路径中。多文件模型的附属文件不会自动递归导入，仅复制主模型文件不一定能解决其贴图引用。</p>
+<h3 id="section-9-3">9.3 常用配置位置</h3>
+<p>以下路径均相对当前项目：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>主要用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>shdisplay-project.json</td>
+<td>项目标识和登记资源清单</td>
+</tr>
+<tr>
+<td>Data/Config/systemConfig.xml</td>
+<td>地图入口；当前启动/Home镜头读 viewPointEnd，viewPointBegin 保留兼容</td>
+</tr>
+<tr>
+<td>Data/earth/FreeEarth_flat.earth</td>
+<td>公开模板的空白地球，实际入口以主配置为准</td>
+</tr>
+<tr>
+<td>map/（可选）</td>
+<td>用户自行提供的合法地图数据；公开源码不附带</td>
+</tr>
+<tr>
+<td>Data/Config/dynamic-plans.xml</td>
+<td>方案、步骤、动态标记、时序、视角和动作</td>
+</tr>
+<tr>
+<td>Data/Config/squad-annotations.xml</td>
+<td>普通部署标注</td>
+</tr>
+<tr>
+<td>Data/Config/marksConfig.xml、plotsConfig.xml</td>
+<td>固定标记和标绘</td>
+</tr>
+<tr>
+<td>Data/Config/customLayerConfig.xml</td>
+<td>自定义地图图层</td>
+</tr>
+<tr>
+<td>Data/Config/featureConfig.xml</td>
+<td>系统矢量图层定义与样式</td>
+</tr>
+<tr>
+<td>Data/Config/viewPointConfig.xml</td>
+<td>保存的视点</td>
+</tr>
+<tr>
+<td>Data/Config/fixed-spatial.xml</td>
+<td>环境、测量分析及兼容数据</td>
+</tr>
+<tr>
+<td>Data/model/H6/routes/flight_routes.xml</td>
+<td>飞行漫游航线</td>
+</tr>
+</tbody></table>
+<p>完整清单、兼容文件优先级和地图模板见<a href="CONFIGURATION.md">配置文件说明</a>。没有 IMS 登录或用户权限配置文件。</p>
+<h3 id="section-9-4">9.4 缓存、临时副本与日志位置</h3>
+<p>以下目录均相对 <strong>ShDisplayViewer 可执行文件所在目录</strong>，不随终端当前目录或所打开的演练项目改变：</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cache/earth/</code></td>
+<td>系统底图和已启用缓存的自定义影像/高程的磁盘缓存</td>
+</tr>
+<tr>
+<td><code>cache/temporary/</code></td>
+<td>演示临时副本；正常退出副本或程序时清理本次副本</td>
+</tr>
+<tr>
+<td><code>cache/fontconfig/</code></td>
+<td>字体库生成的缓存</td>
+</tr>
+<tr>
+<td><code>settings/</code></td>
+<td>程序级设置；演练和地图配置仍保存在项目 <code>Data/Config</code></td>
+</tr>
+<tr>
+<td><code>log/</code></td>
+<td>程序日志；Ubuntu 桌面模式启动日志也存放在这里</td>
+</tr>
+</tbody></table>
+<p>启动会自动创建并检查目录。缓存按所浏览区域和缩放级别逐步生成，不等于下载了完整地图。自定义图层新增缓存路径只读，旧配置中的外部绝对缓存路径在运行时统一归到程序旁。旧用户目录缓存保留，新版不会继续使用，也不会自动搬运或删除。</p>
+<p>请把完整程序放到当前用户可写的位置。移动程序后这些目录随新位置建立。上传源码时排除缓存、临时副本和日志；如果自制合法离线运行包，可按需要附带已生成且有权分发的地图缓存。Ubuntu 的桌面快捷方式及菜单图标仍按桌面系统约定安装，它们不属于地图缓存。</p>
+<h2 id="chapter-10">10. 常见问题</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>检查与处理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启动后地球空白</td>
+<td>默认模板没有在线底图；核对 .earth 入口、连接、显隐、透明度和覆盖范围</td>
+</tr>
+<tr>
+<td>有图层名称却没有瓦片</td>
+<td>核对 TMS 元数据是否为 XML、瓦片返回是否真为图片、图层勾选与不透明度、坐标系/格式/级别；镜头须在覆盖范围内，见第4章</td>
+</tr>
+<tr>
+<td>系统图层删改后旧名称仍在</td>
+<td>核对实际 earth 路径、当前项目/演示副本及环境变量覆盖；保存并重开项目，不要只修改另一个同名 .earth</td>
+</tr>
+<tr>
+<td>底图上下颠倒或错位</td>
+<td>XYZ 的 profile、行号方向或级别约定不匹配；TMS 先核对元数据，避免混用 XYZ 模板</td>
+</tr>
+<tr>
+<td>系统矢量不出现或乱码</td>
+<td>检查 featureConfig.xml、配套数据文件、显示范围、父子节点显隐、Ubuntu 路径大小写、中文编码及字体</td>
+</tr>
+<tr>
+<td>地图放大后模糊</td>
+<td>可能涉及影像分辨率、级别、加载或覆盖；检查实际瓦片，不只凭画面认定原因</td>
+</tr>
+<tr>
+<td>配置修改不生效</td>
+<td>确认当前项目、--project 参数及环境变量覆盖；手改后重新打开项目或重启</td>
+</tr>
+<tr>
+<td>获取视角后播放仍看向别处</td>
+<td>同时模式使用步骤视角，顺序模式使用标记视角；确认模式、保存结果和视距</td>
+</tr>
+<tr>
+<td>播放提示时长冲突</td>
+<td>增大每标记时长或缩短飞行时间，容纳飞行加 0.5 秒</td>
+</tr>
+<tr>
+<td>标记没出现镜头先动</td>
+<td>顺序模式先飞行，到达后显示标记，属于时序规则</td>
+</tr>
+<tr>
+<td>上一步标记仍显示</td>
+<td>当前演练保留累积态势；停止时隐藏动态标记</td>
+</tr>
+<tr>
+<td>单击没有动作</td>
+<td>检查动作是否启用、是否设为鼠标点击、地址路径及当前是否在绘制编辑状态；自动触发不会因单击重复执行</td>
+</tr>
+<tr>
+<td>RTSP 失败或黑屏</td>
+<td>检查服务、认证、编码、网络和视频组件，查看视频窗口错误提示</td>
+</tr>
+<tr>
+<td>打开程序失败</td>
+<td>检查当前平台路径、文件及执行权限，相对路径基于项目 Data</td>
+</tr>
+<tr>
+<td>换电脑后资源缺失</td>
+<td>检查已登记资源、外部地图、附属文件和程序路径</td>
+</tr>
+<tr>
+<td>演示后修改丢失</td>
+<td>演示副本为临时数据，退出前需另存为</td>
+</tr>
+<tr>
+<td>DLL、Qt 或地图插件缺失</td>
+<td>使用完整匹配的运行包，不混用架构或编译器不匹配的 SDK</td>
+</tr>
+</tbody></table>
+<p>反馈时提供版本、系统、复现步骤和脱敏示例；不要提交摄像机密码、令牌或无权公开的现场数据。</p>
+<h2 id="chapter-11">11. 部署交接与使用前检查</h2>
+<p>交接时提供完整程序目录、当前项目目录、所需地图配置及外部资源位置。新电脑先验证底图、字体、一个点标记和一个演练步骤，再验证自己的 RTSP、网页和程序动作；最后做一次完整演练。</p>
+<table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>完成条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启动</td>
+<td>正常打开，无缺少运行库/插件提示</td>
+</tr>
+<tr>
+<td>地图</td>
+<td>实际覆盖区域可见，缩放和坐标位置正确</td>
+</tr>
+<tr>
+<td>系统/自定义图层</td>
+<td>定义文件、显隐和叠加关系明确</td>
+</tr>
+<tr>
+<td>本地标记</td>
+<td>父节点与标记可见，资源路径有效</td>
+</tr>
+<tr>
+<td>演练</td>
+<td>时长无冲突，标记顺序和视角符合讲解</td>
+</tr>
+<tr>
+<td>关联动作</td>
+<td>实际地址可用，自动触发时机及延时关闭符合预期</td>
+</tr>
+<tr>
+<td>保存与演示副本</td>
+<td>保存后重开可恢复，演示调整需保留时已另存</td>
+</tr>
+</tbody></table>
+<p>开发环境见<a href="BUILD.md">构建说明</a>，详细配置文件对应见<a href="CONFIGURATION.md">配置说明</a>。本手册描述单机编辑与步骤演练，不提供真实导航、火势预测或自动灾害处置决策。</p>
+<p>开发者：青岛顺和信息技术有限公司；支持网站：<a href="http://www.shunhexinxi.com">www.shunhexinxi.com</a>。反馈请提供版本、系统、复现步骤和脱敏样例。</p>
+<footer>文档按当前界面、配置读取代码和地图驱动资料核对。配置示例应在自己的项目中按服务实际情况调整。</footer></main></div></body></html>
