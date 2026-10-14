@@ -86,7 +86,7 @@ ShDisplayViewer 1.0.2
 FreeEarthSDK 为单独提供的闭源 Viewer 专用开发包，完整源码构建需该包及外部开发依赖。
 公开模板不含现场底图、高程、缓存、设备账号或真实项目。
 操作手册见 docs/USER_GUIDE.pdf；地图配置见 docs/CONFIGURATION.md。
-虚构青岛仓库火灾示例位于 examples/warehouse-fire。
+虚构城市火灾示例位于 examples/warehouse-fire。
 
 开发者：青岛顺和信息技术有限公司
 项目维护：shunhe

@@ -80,8 +80,7 @@ Qt、FFmpeg、OSG/osgEarth、GDAL 等第三方组件保留各自许可证。源�
 | 项目维护 | shunhe |
 | 公司 | 青岛顺和信息技术有限公司 |
 | 官网 | [www.shunhexinxi.com](http://www.shunhexinxi.com) |
-| 商务邮箱 | 【待补充】 |
-| 其他公开联系方式 | 【待补充】 |
+
 
 ## 反馈与贡献
 
