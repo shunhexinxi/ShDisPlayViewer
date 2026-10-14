@@ -21,7 +21,7 @@
       "binaryDir": "${sourceDir}/build/ubuntu-release",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "CMAKE_PREFIX_PATH": "$env{QT_ROOT};$env{FREEEARTH_SDK_ROOT};$env{OSGEARTH_ROOT}",
+        "CMAKE_PREFIX_PATH": "$env{QT_ROOT};$env{SHEARTH_SDK_ROOT};$env{OSGEARTH_ROOT}",
         "BUILD_TESTING": "ON"
       }
     }

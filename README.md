@@ -8,9 +8,9 @@
 
 项目维护方：**shunhe**；开发者：**青岛顺和信息技术有限公司**；官网：[www.shunhexinxi.com](http://www.shunhexinxi.com)。
 
-基于 C++17 / Qt 6，使用 FreeEarthSDK 地图组件和 FFmpeg 视频封装。Viewer 无需 IMS 服务、登录、激活或角色权限；项目保存在本地，在线地图、RTSP 和网页可按需联网。
+基于 C++17 / Qt 6，使用 ShEarthSDK 地图组件和 FFmpeg 视频封装。Viewer 无需 IMS 服务、登录、激活或角色权限；项目保存在本地，在线地图、RTSP 和网页可按需联网。
 
-[使用操作说明](docs/USER_GUIDE.md) · [PDF 手册](docs/USER_GUIDE.pdf) · [地图配置](docs/CONFIGURATION.md) · [源码构建](docs/BUILD.md) · [SDK 接入](sdk/FreeEarthSDK/README.md) · [SDK 文件位置](docs/SDK_LAYOUT.md) · [城市火灾示例](examples/warehouse-fire/README.md) · [更新记录](CHANGELOG.md)
+[使用操作说明](docs/USER_GUIDE.md) · [PDF 手册](docs/USER_GUIDE.pdf) · [地图配置](docs/CONFIGURATION.md) · [源码构建](docs/BUILD.md) · [SDK 接入](sdk/ShEarthSDK/README.md) · [SDK 文件位置](docs/SDK_LAYOUT.md) · [城市火灾示例](examples/warehouse-fire/README.md) · [更新记录](CHANGELOG.md)
 
 ## 功能
 
@@ -30,7 +30,7 @@
 
 普通用户使用包含全部依赖的 Viewer 运行包。Windows 解压到可写目录后双击 `ShDisplayViewer.exe`；Ubuntu 22.04 及以上 x86_64 图形桌面使用包内 `bash run.sh`，可执行 `bash install-desktop.sh` 创建快捷方式。不要只复制主程序。
 
-**本仓库是源码仓，FreeEarthSDK 为单独分发的闭源二进制 SDK。** 完整源码构建需取得匹配平台的 Viewer 专用 SDK 开发包和外部开发依赖。SDK 与 Viewer 运行包应从本仓库 Releases 中分别获取；若维护方尚未附加下载文件，请查看 SDK 接入说明，不能用源码自动下载包代替 SDK。
+**本仓库公开 Viewer 源码，ShEarthSDK 和 ShVideoSDK 的实现均为闭源。** 完整源码构建需取得匹配平台的两个 SDK 开发包和外部依赖。SDK 与 Viewer 运行包应从 Releases 分别获取；源码自动下载包不包含 SDK 库文件。
 
 公开源码默认是空白离线地球，没有预设商业底图、现场高程、地图缓存、摄像机地址或业务账号。请按 [地图配置说明](docs/CONFIGURATION.md) 配置有权使用的地图服务或本地数据。
 
@@ -43,9 +43,9 @@
 - C++17、CMake 3.25+、Qt 6.11.x。
 - Windows x86_64：MSVC 2022，Release /MD。
 - Ubuntu 22.04 x86_64：GCC 11 作为构建基线。
-- FreeEarthSDK 4.0.0、OSG 3.6.5、osgEarth 3.8；视频后端使用 FFmpeg 7。
+- ShEarthSDK 4.0.0、OSG 3.6.5、osgEarth 3.8；视频后端使用 FFmpeg 7。
 
-公开源码使用 `SHDISPLAY_EARTH_PROVIDER=PACKAGE`。没有 SDK 时可关闭地图后端开发界面，但这不是完整地图产品。逐步命令与依赖说明见 [BUILD.md](docs/BUILD.md)；跨平台检查范围见 [VALIDATION.md](docs/VALIDATION.md)。
+公开源码使用 `SHDISPLAY_EARTH_PROVIDER=PACKAGE` 和 `SHDISPLAY_VIDEO_PROVIDER=PACKAGE`。两个 SDK 仅提供公共头文件和库；缺少某个 SDK 时可关闭对应后端开发界面。逐步命令与依赖说明见 [BUILD.md](docs/BUILD.md)。
 
 默认项目优先级：命令行 `--project` → 程序旁项目 → 程序旁 `Projects/default`。缓存、设置、日志和临时副本保存在程序目录；运行目录须可写。重复构建保留用户现有配置。
 
@@ -55,8 +55,8 @@
 | --- | --- |
 | `src/` | Viewer 应用、界面与演练模块 |
 | `tests/` | 项目、配置、标记、动作及播放测试 |
-| `sdk/videoSDK/` | 公开的视频封装源码和接口，外部依赖 FFmpeg/Qt |
-| `sdk/FreeEarthSDK/` | 地图 SDK 公共接口与接入说明，不含闭源实现 |
+| `sdk/ShVideoSDK/` | 视频 SDK 公共头文件与接入说明，不含实现 |
+| `sdk/ShEarthSDK/` | 地图 SDK 公共接口与接入说明，不含闭源实现 |
 | `resources/`、`assets/` | 可分发图标、纹理、模型和清洁项目模板 |
 | `examples/warehouse-fire/` | 虚构城市火灾演练示例与生成脚本 |
 | `scripts/` | 公开构建、运行、发布筛查及快捷方式脚本 |
@@ -65,9 +65,9 @@
 
 ## 许可
 
-Viewer、VideoSDK 自研源码和随附已授权素材采用 [Apache-2.0](LICENSE)。项目署名为 shunhe，见 [AUTHORS.md](AUTHORS.md) 和 [NOTICE](NOTICE)。
+Viewer 源码、公开接口声明和随附已授权素材采用 [Apache-2.0](LICENSE)。项目署名为 shunhe，见 [AUTHORS.md](AUTHORS.md) 和 [NOTICE](NOTICE)。
 
-FreeEarthSDK 自研实现与二进制保持闭源；Viewer 免费免激活使用，SDK 在其他产品中集成需另行商业授权。最终 SDK 下载包采用独立 Viewer 专用条款，不受根目录 Apache-2.0 覆盖。其边界见 [SDK 接入](sdk/FreeEarthSDK/README.md)。
+ShEarthSDK 和 ShVideoSDK 的自研实现及二进制均按独立条款分发，不由根目录 Apache-2.0 授权。Viewer 保持免费免激活，SDK 集成与再分发条款由维护方单独提供。自 2026-10-14 起的新发布不包含 SDK 实现；如果历史版本曾按 Apache-2.0 对外提供，已有授权仍按原条款有效。
 
 Qt、FFmpeg、OSG/osgEarth、GDAL 等第三方组件保留各自许可证。源码仓不附带这些第三方二进制；另行发布运行包时需提供与实际依赖版本和构建相符的声明及源码获取资料，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
@@ -80,7 +80,6 @@ Qt、FFmpeg、OSG/osgEarth、GDAL 等第三方组件保留各自许可证。源�
 | 项目维护 | shunhe |
 | 公司 | 青岛顺和信息技术有限公司 |
 | 官网 | [www.shunhexinxi.com](http://www.shunhexinxi.com) |
-
 
 ## 反馈与贡献
 
