@@ -86,7 +86,7 @@ struct DeploymentMeasurement
     double analysisOpacity = 1.0;
 };
 
-// Reproduces the drawing defaults used by each FreeEarthSDK measurement.
+// Reproduces the drawing defaults used by each ShEarthSDK measurement.
 // Call this after assigning kind; persisted XML attributes may then override
 // individual values without resetting a user's saved style.
 inline void applyLegacyMeasurementStyleDefaults(DeploymentMeasurement &measurement)

@@ -12,7 +12,7 @@
 #include <QUrl>
 #include <QVBoxLayout>
 #if defined(ZQXXXT_ENABLE_VIDEO)
-#include <VideoSDK/VideoPlayer.h>
+#include <ShVideoSDK/VideoPlayer.h>
 #endif
 
 namespace Zqxxxt::MarkerActions {

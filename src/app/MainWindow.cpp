@@ -138,7 +138,7 @@ MainWindow::MainWindow(const QString &project)
         else openProject(m_project);
     });
     tools->addAction(QStringLiteral("地图服务说明"), this, [this] {
-        message(QStringLiteral("基础场景 → 图层 → 添加图层，可配置 TMS 服务和本地数据。其他地图驱动通过 .earth 文件配置，以当前 FreeEarthSDK 构建支持为准。网络地图需要服务可达，服务自身的凭据与许可仍由提供方决定。默认示例为空白离线地球，不请求 IMS 或外部底图。"));
+        message(QStringLiteral("基础场景 → 图层 → 添加图层，可配置 TMS 服务和本地数据。其他地图驱动通过 .earth 文件配置，以当前 ShEarthSDK 构建支持为准。网络地图需要服务可达，服务自身的凭据与许可仍由提供方决定。默认示例为空白离线地球，不请求 IMS 或外部底图。"));
     });
     auto *windowFullscreenShortcut = new QShortcut(QKeySequence(Qt::Key_F11), this);
     connect(windowFullscreenShortcut, &QShortcut::activated, this, &MainWindow::toggleWindowFullscreen);

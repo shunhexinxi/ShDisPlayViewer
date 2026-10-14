@@ -42,7 +42,7 @@
 #include <limits>
 
 #if defined(ZQXXXT_ENABLE_EARTH)
-#include <FreeEarthSDK/EarthRuntime.h>
+#include <ShEarthSDK/EarthRuntime.h>
 #endif
 
 namespace Zqxxxt {
@@ -479,7 +479,7 @@ void SceneWidget::initializeEarthRuntime()
             : (runtimeError.contains(QStringLiteral("OpenGL shader entry points"))
                 ? QStringLiteral("当前图形环境无法初始化三维地图，已安全切换到错误提示页；客户端其他功能仍可使用。")
                 : QStringLiteral("三维地球场景初始化失败，请检查地图地址、服务状态和运行插件。"));
-        qCritical().noquote() << QStringLiteral("FreeEarthSDK initialization failed: %1")
+        qCritical().noquote() << QStringLiteral("ShEarthSDK initialization failed: %1")
             .arg(runtimeError.isEmpty() ? m_earthError : runtimeError);
         m_earth.reset();
         if (m_earthErrorOverlay) {
@@ -496,7 +496,7 @@ void SceneWidget::initializeEarthRuntime()
     if (m_earthErrorOverlay)
         m_earthErrorOverlay->hide();
     if (!m_earth->lastError().empty())
-        qWarning().noquote() << QStringLiteral("FreeEarthSDK map warning: %1")
+        qWarning().noquote() << QStringLiteral("ShEarthSDK map warning: %1")
             .arg(QString::fromStdString(m_earth->lastError()));
     QString layerError;
     if (!setDeploymentLayers(m_deploymentLayers, layerError) && !layerError.isEmpty())
