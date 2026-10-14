@@ -1,0 +1,9 @@
+<!DOCTYPE zqxxxt-fixed-spatial>
+<fixedSpatial coordinateSystem="EPSG:4326" schemaVersion="1">
+  <layers/>
+  <measurements/>
+  <environment ambientIntensity="50" animateTime="false" atmosphereColor="#3c91d2" atmosphereOpacity="0.14" atmosphereVisible="true" brightness="100" calendarDate="" cloudAltitudeMeters="8000.0" cloudColor="#e1ebf2" cloudDensity="60" cloudDirectionDegrees="45" cloudOpacity="80" cloudSpeed="10.0" cloudThicknessMeters="200.0" cloudType="cumulus" cloudVisible="false" fog="0" fogColor="#a8b3cf" fogOpacity="1.00" fogVisible="false" minuteOfHour="0" moonColor="#dcebff" moonOpacity="0.75" moonSize="12.00" moonVisible="true" nebulaVisible="true" rain="50" rainColor="#8c8c8c" rainGlobal="true" rainHeightMeters="20000.0" rainLatitude="0.00000000" rainLineWidth="1.00" rainLongitude="0.00000000" rainOpacity="0.50" rainRadiusMeters="100000.0" rainVisible="false" secondOfMinute="0" snow="50" snowColor="#cccccc" snowGlobal="true" snowHeightMeters="20000.0" snowLatitude="0.00000000" snowLongitude="0.00000000" snowOpacity="0.50" snowParticleSize="2.00" snowRadiusMeters="100000.0" snowVisible="false" starColor="#ffffff" starOpacity="1.00" starSize="1.00" starsVisible="true" sunColor="#ffe073" sunOpacity="0.82" sunSize="15.00" sunVisible="false" syncSystemTime="false" timeOfDay="12" timeSpeed="1"/>
+  <viewpoints>
+    <viewpoint altitude="0.00" flyTimeSeconds="3.00" heading="0.00" id="default-view" latitude="31.18280000" longitude="121.41400000" name="默认视角" pitch="-35.00" range="1500000.00"/>
+  </viewpoints>
+</fixedSpatial>

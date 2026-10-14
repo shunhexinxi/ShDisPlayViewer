@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+  <common customLayer="Config/customLayerConfig.xml" earth="earth/FreeEarth_flat.earth" featureLayer="Config/featureConfig.xml" marks="Config/marksConfig.xml" plots="Config/plotsConfig.xml" title="ShDisplayViewer"/>
+  <viewPoints>
+    <viewPointBegin heading="0" hei="1500000" lat="31.1828" lon="121.414" pitch="-35" range="1500000" time="0"/>
+    <viewPointEnd heading="-7.9141700000000004" hei="10383909" lat="27.645" lon="107.205" pitch="-89.888800000000003" range="10383909" time="0"/>
+  </viewPoints>
+</system>

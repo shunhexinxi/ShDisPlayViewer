@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  HTTP TMS 服务模板（默认不启用）：
+  1. 将下方 URL 替换为实际服务的 tms.xml / tilemapresource.xml 元数据地址。
+  2. 移除 TMSImage 元素外的注释；如有高程服务，同样配置 TMSElevation。
+  3. 在 systemConfig.xml 中设置 common earth="earth/examples/HttpTms.earth"。
+  4. 重启程序。示例域名 example.invalid 只是占位符，不是可用服务。
+  TMS 元数据地址不同于 XYZ 的 {z}/{x}/{y} 瓦片模板；后者使用 HttpXyz.earth。
+-->
+<map name="HTTP TMS" type="geocentric" version="2">
+  <options><lighting>false</lighting></options>
+  <!--
+  <TMSImage name="HTTP TMS 底图">
+    <url>https://example.invalid/maps/imagery/tms.xml</url>
+  </TMSImage>
+  -->
+  <!--
+  <TMSElevation name="HTTP TMS 高程">
+    <url>https://example.invalid/maps/elevation/tms.xml</url>
+  </TMSElevation>
+  -->
+</map>

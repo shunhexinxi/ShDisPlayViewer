@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flightRoutes version="1.0">
+  <route id="1" name="航线 1" visible="true" color="#19e7ed" lineWidth="2.0" markerStyle="circle"/>
+  <route id="2" name="航线 2" visible="true" color="#ffe600" lineWidth="2.0" markerStyle="circle"/>
+  <route id="3" name="航线 3" visible="true" color="#ef55dc" lineWidth="2.0" markerStyle="circle"/>
+</flightRoutes>

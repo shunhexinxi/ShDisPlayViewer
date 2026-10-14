@@ -1,0 +1,38 @@
+<!DOCTYPE zqxxxt-dynamic-plans>
+<dynamicPlans coordinateSystem="EPSG:4326" schemaVersion="1">
+  <plan description="纯虚构场景；离线可编辑和播放，不包含真实单位或设备。" id="demo-plan" loop="false" name="示例：集结、部署、处置">
+    <step description="集结：依次展示两个标记，可暂停、拖动时间轴或编辑视角。" durationSeconds="8" id="demo-step-0" markerDisplay="sequential" markerDurationSeconds="4" name="集结">
+      <viewpoint altitude="0.00" flyTimeSeconds="3.00" heading="0.00" id="" latitude="0.00000000" longitude="0.00000000" name="" pitch="-70.00" range="8000.00"/>
+      <markers>
+        <marker altitude="0.00" altitudeMode="0" category="" color="#36c8ff" fillColor="#ffff00" fillOpacity="0.500" geometryType="point" icon="" id="demo-marker-0-0" labelAlignment="1" labelBackgroundColor="#ffffffff" labelBackgroundImage="texture/mark/label_title.png" labelHeight="30.00" labelTextColor="#ffffff00" labelWidth="130.00" latitude="-0.01000000" lineOpacity="1.000" lineWidth="1.00" longitude="-0.00600000" modelLodHighMeters="100000000.000" modelLodLowMeters="0.000" modelRotationXDegrees="0.0000" modelRotationYDegrees="0.0000" modelRotationZDegrees="0.0000" modelSourceType="0" name="集结·点位1" pointSize="20.00" textSize="15.00" tiltRotationDegrees="0.0000" tiltSourceType="0" viewAltitude="0.00" viewFlyTime="1.00" viewHeading="0.000" viewLatitude="-0.01000000" viewLongitude="-0.00600000" viewPitch="-70.000" viewRange="8000.00" viewRangeHigh="100000000.00" viewRangeLow="0.00" visible="true">
+          <point altitude="0.00" latitude="-0.01000000" longitude="-0.00600000"/>
+        </marker>
+        <marker altitude="0.00" altitudeMode="0" category="" color="#36c8ff" fillColor="#ffff00" fillOpacity="0.500" geometryType="point" icon="" id="demo-marker-0-1" labelAlignment="1" labelBackgroundColor="#ffffffff" labelBackgroundImage="texture/mark/label_title.png" labelHeight="30.00" labelTextColor="#ffffff00" labelWidth="130.00" latitude="-0.01000000" lineOpacity="1.000" lineWidth="1.00" longitude="0.00600000" modelLodHighMeters="100000000.000" modelLodLowMeters="0.000" modelRotationXDegrees="0.0000" modelRotationYDegrees="0.0000" modelRotationZDegrees="0.0000" modelSourceType="0" name="集结·点位2" pointSize="20.00" textSize="15.00" tiltRotationDegrees="0.0000" tiltSourceType="0" viewAltitude="0.00" viewFlyTime="1.00" viewHeading="0.000" viewLatitude="-0.01000000" viewLongitude="0.00600000" viewPitch="-70.000" viewRange="8000.00" viewRangeHigh="100000000.00" viewRangeLow="0.00" visible="true">
+          <point altitude="0.00" latitude="-0.01000000" longitude="0.00600000"/>
+        </marker>
+      </markers>
+    </step>
+    <step description="展开部署：依次展示两个标记，可暂停、拖动时间轴或编辑视角。" durationSeconds="8" id="demo-step-1" markerDisplay="sequential" markerDurationSeconds="4" name="展开部署">
+      <viewpoint altitude="0.00" flyTimeSeconds="3.00" heading="0.00" id="" latitude="0.00000000" longitude="0.00000000" name="" pitch="-70.00" range="8000.00"/>
+      <markers>
+        <marker altitude="0.00" altitudeMode="0" category="" color="#ffb940" fillColor="#ffff00" fillOpacity="0.500" geometryType="point" icon="" id="demo-marker-1-0" labelAlignment="1" labelBackgroundColor="#ffffffff" labelBackgroundImage="texture/mark/label_title.png" labelHeight="30.00" labelTextColor="#ffffff00" labelWidth="130.00" latitude="0.00000000" lineOpacity="1.000" lineWidth="1.00" longitude="-0.00600000" modelLodHighMeters="100000000.000" modelLodLowMeters="0.000" modelRotationXDegrees="0.0000" modelRotationYDegrees="0.0000" modelRotationZDegrees="0.0000" modelSourceType="0" name="展开部署·点位1" pointSize="20.00" textSize="15.00" tiltRotationDegrees="0.0000" tiltSourceType="0" viewAltitude="0.00" viewFlyTime="1.00" viewHeading="0.000" viewLatitude="0.00000000" viewLongitude="-0.00600000" viewPitch="-70.000" viewRange="8000.00" viewRangeHigh="100000000.00" viewRangeLow="0.00" visible="true">
+          <point altitude="0.00" latitude="0.00000000" longitude="-0.00600000"/>
+        </marker>
+        <marker altitude="0.00" altitudeMode="0" category="" color="#ffb940" fillColor="#ffff00" fillOpacity="0.500" geometryType="point" icon="" id="demo-marker-1-1" labelAlignment="1" labelBackgroundColor="#ffffffff" labelBackgroundImage="texture/mark/label_title.png" labelHeight="30.00" labelTextColor="#ffffff00" labelWidth="130.00" latitude="0.00000000" lineOpacity="1.000" lineWidth="1.00" longitude="0.00600000" modelLodHighMeters="100000000.000" modelLodLowMeters="0.000" modelRotationXDegrees="0.0000" modelRotationYDegrees="0.0000" modelRotationZDegrees="0.0000" modelSourceType="0" name="展开部署·点位2" pointSize="20.00" textSize="15.00" tiltRotationDegrees="0.0000" tiltSourceType="0" viewAltitude="0.00" viewFlyTime="1.00" viewHeading="0.000" viewLatitude="0.00000000" viewLongitude="0.00600000" viewPitch="-70.000" viewRange="8000.00" viewRangeHigh="100000000.00" viewRangeLow="0.00" visible="true">
+          <point altitude="0.00" latitude="0.00000000" longitude="0.00600000"/>
+        </marker>
+      </markers>
+    </step>
+    <step description="处置完成：依次展示两个标记，可暂停、拖动时间轴或编辑视角。" durationSeconds="8" id="demo-step-2" markerDisplay="sequential" markerDurationSeconds="4" name="处置完成">
+      <viewpoint altitude="0.00" flyTimeSeconds="3.00" heading="0.00" id="" latitude="0.00000000" longitude="0.00000000" name="" pitch="-70.00" range="8000.00"/>
+      <markers>
+        <marker altitude="0.00" altitudeMode="0" category="" color="#45dc91" fillColor="#ffff00" fillOpacity="0.500" geometryType="point" icon="" id="demo-marker-2-0" labelAlignment="1" labelBackgroundColor="#ffffffff" labelBackgroundImage="texture/mark/label_title.png" labelHeight="30.00" labelTextColor="#ffffff00" labelWidth="130.00" latitude="0.01000000" lineOpacity="1.000" lineWidth="1.00" longitude="-0.00600000" modelLodHighMeters="100000000.000" modelLodLowMeters="0.000" modelRotationXDegrees="0.0000" modelRotationYDegrees="0.0000" modelRotationZDegrees="0.0000" modelSourceType="0" name="处置完成·点位1" pointSize="20.00" textSize="15.00" tiltRotationDegrees="0.0000" tiltSourceType="0" viewAltitude="0.00" viewFlyTime="1.00" viewHeading="0.000" viewLatitude="0.01000000" viewLongitude="-0.00600000" viewPitch="-70.000" viewRange="8000.00" viewRangeHigh="100000000.00" viewRangeLow="0.00" visible="true">
+          <point altitude="0.00" latitude="0.01000000" longitude="-0.00600000"/>
+        </marker>
+        <marker altitude="0.00" altitudeMode="0" category="" color="#45dc91" fillColor="#ffff00" fillOpacity="0.500" geometryType="point" icon="" id="demo-marker-2-1" labelAlignment="1" labelBackgroundColor="#ffffffff" labelBackgroundImage="texture/mark/label_title.png" labelHeight="30.00" labelTextColor="#ffffff00" labelWidth="130.00" latitude="0.01000000" lineOpacity="1.000" lineWidth="1.00" longitude="0.00600000" modelLodHighMeters="100000000.000" modelLodLowMeters="0.000" modelRotationXDegrees="0.0000" modelRotationYDegrees="0.0000" modelRotationZDegrees="0.0000" modelSourceType="0" name="处置完成·点位2" pointSize="20.00" textSize="15.00" tiltRotationDegrees="0.0000" tiltSourceType="0" viewAltitude="0.00" viewFlyTime="1.00" viewHeading="0.000" viewLatitude="0.01000000" viewLongitude="0.00600000" viewPitch="-70.000" viewRange="8000.00" viewRangeHigh="100000000.00" viewRangeLow="0.00" visible="true">
+          <point altitude="0.00" latitude="0.01000000" longitude="0.00600000"/>
+        </marker>
+      </markers>
+    </step>
+  </plan>
+</dynamicPlans>

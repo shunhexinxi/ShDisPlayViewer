@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<viewpoints>
+  <viewpoint zqxxxt-id="default-view">
+    <lon>121.41400000</lon>
+    <lat>31.18280000</lat>
+    <hei>0.000</hei>
+    <heading>0.000</heading>
+    <pitch>-35.000</pitch>
+    <range>1500000.000</range>
+    <time>3.000</time>
+    <name>默认视角</name>
+  </viewpoint>
+</viewpoints>

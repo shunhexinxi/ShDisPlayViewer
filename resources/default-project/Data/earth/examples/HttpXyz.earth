@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  XYZ 瓦片服务模板（默认不启用）：
+  替换 URL，确认 profile 与服务一致，移除 XYZImage 外的注释。
+  然后在 systemConfig.xml 中设置 common earth="earth/examples/HttpXyz.earth" 并重启。
+  常用 profile：spherical-mercator（Web Mercator）、global-geodetic（经纬度）。
+  若瓦片 Y 轴方向相反，服务可能需要 {-y}。URL 中的 & 字符必须写为 &amp;。
+-->
+<map name="HTTP XYZ" type="geocentric" version="2">
+  <options><lighting>false</lighting></options>
+  <!--
+  <XYZImage name="HTTP XYZ 底图">
+    <url>https://example.invalid/tiles/{z}/{x}/{y}.png</url>
+    <profile>spherical-mercator</profile>
+  </XYZImage>
+  -->
+</map>

@@ -1,0 +1,140 @@
+<RCC>
+    <qresource prefix="/app/icons">
+        <file alias="16.png">application/shdisplayviewer-16.png</file>
+        <file alias="24.png">application/shdisplayviewer-24.png</file>
+        <file alias="32.png">application/shdisplayviewer-32.png</file>
+        <file alias="48.png">application/shdisplayviewer-48.png</file>
+        <file alias="64.png">application/shdisplayviewer-64.png</file>
+        <file alias="128.png">application/shdisplayviewer-128.png</file>
+        <file alias="256.png">application/shdisplayviewer-256.png</file>
+        <file alias="512.png">application/shdisplayviewer-512.png</file>
+    </qresource>
+    <qresource prefix="/legacy">
+        <file>images/function/funbtn_normal.png</file>
+        <file>images/function/funbtn_hover.png</file>
+        <file>images/function/funbtn_press.png</file>
+        <file>images/zqxxxt/set_btn.png</file>
+        <file>images/toolbar/environment.png</file>
+        <file>images/toolbar/help.png</file>
+        <file>images/toolbar/layer.png</file>
+        <file>images/toolbar/mark.png</file>
+        <file>images/toolbar/measure.png</file>
+        <file>images/toolbar/Plot.png</file>
+        <file>images/toolbar/roamfly.png</file>
+        <file>images/toolbar/service.png</file>
+        <file>images/toolbar/tool.png</file>
+        <file>images/toolbar/viewpoint.png</file>
+        <file>images/window/minimize_normal.png</file>
+        <file>images/window/minimize_hover.png</file>
+        <file>images/window/minimize_press.png</file>
+        <file>images/window/restore_normal.png</file>
+        <file>images/window/restore_hover.png</file>
+        <file>images/window/restore_press.png</file>
+        <file>images/window/close_normal.png</file>
+        <file>images/window/close_hover.png</file>
+        <file>images/window/close_press.png</file>
+        <file>images/mapmode/2D_normalhover.png</file>
+        <file>images/mapmode/2D_pressed.png</file>
+        <file>images/mapmode/2D_selected.png</file>
+        <file>images/mapmode/2D3D_normalhover.png</file>
+        <file>images/mapmode/2D3D_pressed.png</file>
+        <file>images/mapmode/2D3D_selected.png</file>
+        <file>images/mapmode/3D_normalhover.png</file>
+        <file>images/mapmode/3D_pressed.png</file>
+        <file>images/mapmode/3D_selected.png</file>
+    </qresource>
+    <qresource prefix="/deployment/icons">
+        <file alias="load_image.png">images/deployment/icons/load_image.png</file>
+        <file alias="load_altitude.png">images/deployment/icons/load_altitude.png</file>
+        <file alias="load_vector.png">images/deployment/icons/load_vector.png</file>
+        <file alias="layer_effect.png">images/deployment/icons/layer_effect.png</file>
+        <file alias="setttings.png">images/deployment/icons/setttings.png</file>
+        <file alias="delete_normal.png">images/deployment/icons/delete_normal.png</file>
+        <file alias="point.png">images/deployment/icons/point.png</file>
+        <file alias="text.png">images/deployment/icons/text.png</file>
+        <file alias="line.png">images/deployment/icons/line.png</file>
+        <file alias="polygon.png">images/deployment/icons/polygon.png</file>
+        <file alias="rectangle.png">images/deployment/icons/rectangle.png</file>
+        <file alias="circle.png">images/deployment/icons/circle.png</file>
+        <file alias="ellipse.png">images/deployment/icons/ellipse.png</file>
+        <file alias="sector.png">images/deployment/icons/sector.png</file>
+        <file alias="arc.png">images/deployment/icons/arc.png</file>
+        <file alias="model.png">images/deployment/icons/model.png</file>
+        <file alias="cover.png">images/deployment/icons/cover.png</file>
+        <file alias="oblique_model.png">images/deployment/icons/oblique_model.png</file>
+        <file alias="particle.png">images/deployment/icons/particle.png</file>
+        <file alias="label.png">images/deployment/icons/label.png</file>
+        <file alias="StraightArrow.png">images/deployment/icons/StraightArrow.png</file>
+        <file alias="StraightMoreArrow.png">images/deployment/icons/StraightMoreArrow.png</file>
+        <file alias="DovetailDiagonalArrow.png">images/deployment/icons/DovetailDiagonalArrow.png</file>
+        <file alias="DovetailDiagonalMoreArrow.png">images/deployment/icons/DovetailDiagonalMoreArrow.png</file>
+        <file alias="DoveTailStraightArrow.png">images/deployment/icons/DoveTailStraightArrow.png</file>
+        <file alias="DoveTailStraightMoreArrow.png">images/deployment/icons/DoveTailStraightMoreArrow.png</file>
+        <file alias="DiagonalArrow.png">images/deployment/icons/DiagonalArrow.png</file>
+        <file alias="DiagonalMoreArrow.png">images/deployment/icons/DiagonalMoreArrow.png</file>
+        <file alias="DoubleArrow.png">images/deployment/icons/DoubleArrow.png</file>
+        <file alias="CloseCurve.png">images/deployment/icons/CloseCurve.png</file>
+        <file alias="RoundedRect.png">images/deployment/icons/RoundedRect.png</file>
+        <file alias="StraightLineArrow.png">images/deployment/icons/StraightLineArrow.png</file>
+        <file alias="BezierCurveArrow.png">images/deployment/icons/BezierCurveArrow.png</file>
+        <file alias="PolyLineArrow.png">images/deployment/icons/PolyLineArrow.png</file>
+        <file alias="ParallelSearch.png">images/deployment/icons/ParallelSearch.png</file>
+        <file alias="SectorSearch.png">images/deployment/icons/SectorSearch.png</file>
+        <file alias="CardinalCurveArrow.png">images/deployment/icons/CardinalCurveArrow.png</file>
+        <file alias="clear_mark.png">images/deployment/icons/clear_mark.png</file>
+        <file alias="space_distance.png">images/deployment/icons/space_distance.png</file>
+        <file alias="surface_distance.png">images/deployment/icons/surface_distance.png</file>
+        <file alias="height_measure.png">images/deployment/icons/height_measure.png</file>
+        <file alias="area_measure.png">images/deployment/icons/area_measure.png</file>
+        <file alias="project_area.png">images/deployment/icons/project_area.png</file>
+        <file alias="line_visible_measure.png">images/deployment/icons/line_visible_measure.png</file>
+        <file alias="view_measure.png">images/deployment/icons/view_measure.png</file>
+        <file alias="profile_measure.png">images/deployment/icons/profile_measure.png</file>
+        <file alias="gradient_measure.png">images/deployment/icons/gradient_measure.png</file>
+        <file alias="flood_measure.png">images/deployment/icons/flood_measure.png</file>
+        <file alias="cutfill_measure.png">images/deployment/icons/cutfill_measure.png</file>
+        <file alias="contour_measure.png">images/deployment/icons/contour_measure.png</file>
+        <file alias="sun_light.png">images/deployment/icons/sun_light.png</file>
+        <file alias="atmosphere.png">images/deployment/icons/atmosphere.png</file>
+        <file alias="cloud.png">images/deployment/icons/cloud.png</file>
+        <file alias="rain.png">images/deployment/icons/rain.png</file>
+        <file alias="snow.png">images/deployment/icons/snow.png</file>
+        <file alias="fog.png">images/deployment/icons/fog.png</file>
+        <file alias="viewpoint_obtain.png">images/deployment/icons/viewpoint_obtain.png</file>
+        <file alias="viewpoint_reset.png">images/deployment/icons/viewpoint_reset.png</file>
+        <file alias="viewpoint_north.png">images/deployment/icons/viewpoint_north.png</file>
+        <file alias="viewpoint_vert.png">images/deployment/icons/viewpoint_vert.png</file>
+        <file alias="viewpoint_locate.png">images/deployment/icons/viewpoint_locate.png</file>
+        <file alias="billboard.png">images/deployment/icons/billboard.png</file>
+        <file alias="scene_info.png">images/deployment/icons/scene_info.png</file>
+        <file alias="save.png">images/deployment/icons/save.png</file>
+        <file alias="open.png">images/deployment/icons/open.png</file>
+        <file alias="update_normal.png">images/deployment/icons/update_normal.png</file>
+        <file alias="folder.png">images/deployment/icons/folder.png</file>
+        <file alias="bird_eye.png">images/deployment/icons/bird_eye.png</file>
+        <file alias="navigator.png">images/deployment/icons/navigator.png</file>
+        <file alias="scale.png">images/deployment/icons/scale.png</file>
+        <file alias="ir.png">images/deployment/icons/ir.png</file>
+    </qresource>
+    <qresource prefix="/deployment/tools">
+        <file alias="airview_world.jpg">images/deployment/tools/airview_world.jpg</file>
+    </qresource>
+    <qresource prefix="/deployment/navigator">
+        <file alias="Compass.png">images/deployment/navigator/Compass.png</file>
+        <file alias="Compass_Edge.png">images/deployment/navigator/Compass_Edge.png</file>
+        <file alias="DirectDiskEdge.png">images/deployment/navigator/DirectDiskEdge.png</file>
+        <file alias="DirectDiskMove.png">images/deployment/navigator/DirectDiskMove.png</file>
+        <file alias="DirectDiskRotate.png">images/deployment/navigator/DirectDiskRotate.png</file>
+        <file alias="ZomPole.png">images/deployment/navigator/ZomPole.png</file>
+        <file alias="ZoomEdge.png">images/deployment/navigator/ZoomEdge.png</file>
+        <file alias="ZoomIn.png">images/deployment/navigator/ZoomIn.png</file>
+        <file alias="ZoomOut.png">images/deployment/navigator/ZoomOut.png</file>
+        <file alias="ZoomSlider.png">images/deployment/navigator/ZoomSlider.png</file>
+    </qresource>
+    <qresource prefix="/deployment/scale">
+        <file alias="mapScale.png">images/deployment/mapScale/mapScale.png</file>
+    </qresource>
+    <qresource prefix="/deployment/mouse">
+        <file alias="center.png">images/deployment/mouse/center.png</file>
+    </qresource>
+</RCC>

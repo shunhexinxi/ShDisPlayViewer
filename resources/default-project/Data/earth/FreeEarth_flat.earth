@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<map name="ShDisplayViewer offline scene" type="geocentric" version="2">
+  <options>
+    <lighting>false</lighting>
+    <!-- Leave path unset to use the Viewer's application-local cache/earth,
+         including when this template is opened as a separate project.
+         For a release/Data/earth file, an explicit path may be ../../cache/earth. -->
+    <cache type="filesystem"/>
+    <cache_policy usage="read_write"/>
+  </options>
+</map>
