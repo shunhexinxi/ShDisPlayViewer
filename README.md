@@ -8,9 +8,9 @@
 
 项目维护方：**shunhe**；开发者：**青岛顺和信息技术有限公司**；官网：[www.shunhexinxi.com](http://www.shunhexinxi.com)。
 
-基于 C++17 / Qt 6，使用 EarthSDK 地图组件和 FFmpeg 视频封装。Viewer 无需 IMS 服务、登录、激活或角色权限；项目保存在本地，在线地图、RTSP 和网页可按需联网。
+基于 C++17 / Qt 6，使用 FreeEarthSDK 地图组件和 FFmpeg 视频封装。Viewer 无需 IMS 服务、登录、激活或角色权限；项目保存在本地，在线地图、RTSP 和网页可按需联网。
 
-[使用操作说明](docs/USER_GUIDE.md) · [PDF 手册](docs/USER_GUIDE.pdf) · [地图配置](docs/CONFIGURATION.md) · [源码构建](docs/BUILD.md) · [SDK 接入](sdk/FreeEarthSDK/README.md) · [城市火灾示例](examples/warehouse-fire/README.md) · [更新记录](CHANGELOG.md)
+[使用操作说明](docs/USER_GUIDE.md) · [PDF 手册](docs/USER_GUIDE.pdf) · [地图配置](docs/CONFIGURATION.md) · [源码构建](docs/BUILD.md) · [SDK 接入](sdk/FreeEarthSDK/README.md) · [SDK 文件位置](docs/SDK_LAYOUT.md) · [城市火灾示例](examples/warehouse-fire/README.md) · [更新记录](CHANGELOG.md)
 
 ## 功能
 
@@ -36,7 +36,7 @@
 
 首次构建自带简单三步骤演练。要查看较完整场景，使用“项目 → 导入 Qt 动态标记 XML…”选择 `examples/warehouse-fire`，另选空目录保存新项目，再配置自己的地图。
 
-城市仓库火灾示例包含 **8 个阶段、30 个标记、150 秒播放时间**：发现报警、疏散接应、首批力量前往、到场部署、请求增援、增援协同、火情控制和清点复盘。所有设施、点位与路线关系均为虚构，不能作为真实道路导航或消防预案使用。
+城市火灾示例包含 **8 个阶段、30 个标记、150 秒播放时间**：发现报警、疏散接应、首批力量前往、到场部署、请求增援、增援协同、火情控制和清点复盘。所有设施、点位与路线关系均为虚构，不能作为真实道路导航或消防预案使用。
 
 ## 开发
 
@@ -80,8 +80,8 @@ Qt、FFmpeg、OSG/osgEarth、GDAL 等第三方组件保留各自许可证。源�
 | 项目维护 | shunhe |
 | 公司 | 青岛顺和信息技术有限公司 |
 | 官网 | [www.shunhexinxi.com](http://www.shunhexinxi.com) |
-| 商务邮箱 | 【无】 |
-| 其他公开联系方式 | 【无】 |
+| 商务邮箱 | 【待补充】 |
+| 其他公开联系方式 | 【待补充】 |
 
 ## 反馈与贡献
 
