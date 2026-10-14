@@ -1,6 +1,6 @@
 # ShDisplayViewer 使用操作说明书
 
-适用版本：1.0.2 ｜ 公开源码版 ｜ 文档更新：2026-10-13
+适用版本：1.0.2 ｜ 公开源码版 ｜ 文档更新：2026-10-14
 
 ShDisplayViewer 用于在地图上编辑部署方案，并按步骤演示事件、行动路线和力量部署。本说明按当前菜单和已实现行为编写，适合方案制作、现场演示和日常维护人员。
 
@@ -183,7 +183,7 @@ TMS 使用 XML 元数据描述瓦片格式、坐标系和级别，再按元数�
 </map>
 ```
 
-`example.invalid` 是占位域名，不能直接使用。含 **20261009 TMS 修复**的 FreeEarthSDK 可以读取 `TileSet href="0"` 等常见相对地址变体；例如元数据位于 `.../WGS84/tms.xml`，相对级别目录 `0` 以该元数据目录解析，不要求修改现有服务端 XML。TMS 1.0 文档要求 href 为绝对 URL，本项目的相对地址处理是兼容能力，见 [TMS 文档](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification)。
+`example.invalid` 是占位域名，不能直接使用。含 **20261009 TMS 修复**的 ShEarthSDK 可以读取 `TileSet href="0"` 等常见相对地址变体；例如元数据位于 `.../WGS84/tms.xml`，相对级别目录 `0` 以该元数据目录解析，不要求修改现有服务端 XML。TMS 1.0 文档要求 href 为绝对 URL，本项目的相对地址处理是兼容能力，见 [TMS 文档](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification)。
 
 | 字段 | 含义及填写方法 |
 | --- | --- |

@@ -47,7 +47,7 @@ foreach ($plugin in Get-ChildItem -LiteralPath $osgPluginSource -Filter '*.dll' 
 # Refresh packaged SDK runtimes even when no client source needed recompiling.
 $cache = Join-Path $output 'CMakeCache.txt'
 if (Test-Path -LiteralPath $cache) {
-    $sdkEntry = Select-String -LiteralPath $cache -Pattern '^FreeEarthSDK_DIR:[^=]+=(.+)$' | Select-Object -First 1
+    $sdkEntry = Select-String -LiteralPath $cache -Pattern '^ShEarthSDK_DIR:[^=]+=(.+)$' | Select-Object -First 1
     if ($sdkEntry) {
         $sdkBin = [System.IO.Path]::GetFullPath((Join-Path $sdkEntry.Matches[0].Groups[1].Value '..\..\..\bin'))
         if (-not (Test-Path -LiteralPath (Join-Path $sdkBin 'FreeEarthRuntime.dll'))) { throw 'SDK runtime package is incomplete' }

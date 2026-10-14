@@ -18,8 +18,8 @@ def build(longitude=120.365, latitude=36.31):
     if not (-179 < longitude < 179 and -85 < latitude < 85):
         raise ValueError("Use an anchor away from the poles and antimeridian")
     default_location = longitude == 120.365 and latitude == 36.31
-    plan_name = "示例：青岛仓库火灾协同处置（虚构）" if default_location else "示例：仓库火灾协同处置（虚构）"
-    area_name = "山东省青岛市虚构园区" if default_location else "虚构园区"
+    plan_name = "示例：城市火灾协同处置（虚构）"
+    area_name = "城市虚构园区"
     area_size = "区域约东西22公里、南北13公里" if default_location else "区域横跨约0.24度经度、0.12度纬度"
     root = ET.Element("dynamicPlans", schemaVersion="1", coordinateSystem="EPSG:4326")
     plan = ET.SubElement(root, "plan", id=PLAN_ID, name=plan_name, loop="false",

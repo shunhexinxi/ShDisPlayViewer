@@ -2,8 +2,10 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 : "${QT_ROOT:?Set QT_ROOT to Qt 6.11.x gcc_64}"
-# FFmpeg 7 must be discoverable via PKG_CONFIG_PATH; osgEarth 3.8/OSG 3.6 via CMAKE_PREFIX_PATH.
-export LD_LIBRARY_PATH="${QT_ROOT}/lib:${FREEEARTH_SDK_ROOT:-/nonexistent}/lib:${LD_LIBRARY_PATH:-}"
+# PACKAGE mode needs runtime libraries; only private SOURCE builds require FFmpeg development metadata.
+SHEARTH_SDK_ROOT="${SHEARTH_SDK_ROOT:-$PWD/sdk/ShEarthSDK/ubuntu2204-x64}"
+SHVIDEO_SDK_ROOT="${SHVIDEO_SDK_ROOT:-$PWD/sdk/ShVideoSDK/ubuntu2204-x64}"
+export LD_LIBRARY_PATH="${QT_ROOT}/lib:$SHEARTH_SDK_ROOT/lib:$SHVIDEO_SDK_ROOT/lib:${LD_LIBRARY_PATH:-}"
 cmake --preset ubuntu-release "$@"
 cmake --build --preset ubuntu-release --parallel "${SHDISPLAY_JOBS:-4}"
 ctest --preset ubuntu-release

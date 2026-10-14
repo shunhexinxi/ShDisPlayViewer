@@ -1,6 +1,6 @@
 # GitHub 建仓与首次发布填写说明
 
-本说明用于上传已经整理的公开源码目录，不直接上传内部工程或现场运行包。FreeEarthSDK 实现闭源，二进制开发包单独作为附件候选；发布前需审定其 Viewer 专用条款。
+本说明用于上传已经整理的公开 Viewer 源码目录。ShEarthSDK 和 ShVideoSDK 的实现均闭源，只提供公共头文件和独立二进制开发包；发布前需审定 SDK 专用条款。
 
 ## 建仓页面怎么填写
 
@@ -81,9 +81,9 @@ ShDisplayViewer 1.0.2
 
 三维地图部署与步骤演练客户端，支持 Windows 和 Ubuntu x86_64。
 提供方案/步骤/动态标记、视角编排、本地标注、地图图层与 RTSP 关联动作。
-无需 IMS、登录或激活。Viewer 和 VideoSDK 自研源码采用 Apache-2.0。
+无需 IMS、登录或激活。Viewer 源码、公共接口声明及随附素材采用 Apache-2.0。
 
-FreeEarthSDK 为单独提供的闭源 Viewer 专用开发包，完整源码构建需该包及外部开发依赖。
+ShEarthSDK 和 ShVideoSDK 为单独提供的闭源开发包，完整源码构建需要两个平台匹配包及外部依赖。
 公开模板不含现场底图、高程、缓存、设备账号或真实项目。
 操作手册见 docs/USER_GUIDE.pdf；地图配置见 docs/CONFIGURATION.md。
 虚构城市火灾示例位于 examples/warehouse-fire。
@@ -96,12 +96,14 @@ FreeEarthSDK 为单独提供的闭源 Viewer 专用开发包，完整源码构�
 
 GitHub 自动提供 Source code ZIP/tar.gz，它们只代表该标签的源码。独立 SDK 包和完整 Viewer 运行包应另外作为 Release assets，不能把技术 SDK 包称为 Viewer 安装包。[GitHub Releases 说明](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)。
 
-此次交付的两份 SDK 开发包是技术候选；正式作为下载附件前须用审定的最终条款替换草案，并保留适用声明。此前包含现场地图 URL、高程与 cache 的运行包不列入本次公开附件，不直接上传。
+此次 SDK 开发包只包含公共头文件、库和必要的接入资料，没有 SDK 实现。正式作为下载附件前须用审定条款替换草案，并保留第三方声明。此前含现场地图数据的运行包不直接作为公开附件。
+
+如果已上传旧源码，更新包中缺失的文件不会由网页上传自动删除。应按实际旧路径从当前分支移除 SDK 实现和私有构建文件，公共接口统一放在 sdk/ShEarthSDK、sdk/ShVideoSDK。旧实现仍可能存在 Git 历史；若已按 Apache-2.0 发布，已有授权不能撤回。
 
 ## 发布前最后核对
 
 - 仓库根结构与文件清单一致，`.github` 等隐藏内容未漏。
-- Viewer/VideoSDK/素材许可证与 SDK 二进制边界写清楚，第三方声明保留。
+- Viewer/ShVideoSDK/素材许可证与 SDK 二进制边界写清楚，第三方声明保留。
 - 商务邮箱如尚未确定，可保留待补充并以官网联系；不编造邮箱和 GitHub Owner。
 - 若说明中承诺 SDK 下载，实际 Releases 必须已附加匹配包及最终条款。
 - 公开源码配置不含内网地址、账号、地图瓦片、日志和缓存；操作手册为公开版。

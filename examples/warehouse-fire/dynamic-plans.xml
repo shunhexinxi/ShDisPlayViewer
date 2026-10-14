@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dynamicPlans schemaVersion="1" coordinateSystem="EPSG:4326">
-  <plan id="example-warehouse-fire-v1" name="示例：青岛仓库火灾协同处置（虚构）" loop="false" description="山东省青岛市虚构园区桌面推演；区域约东西22公里、南北13公里，8个步骤、30个图上标记，约2分30秒。坐标仅用于示意，不对应真实园区或可通行道路。报警、疏散等任务可并行；播放顺序不是现场操作先后要求。历史标记累积保留，以步骤编号识别。">
+  <plan id="example-warehouse-fire-v1" name="示例：城市火灾协同处置（虚构）" loop="false" description="城市虚构园区桌面推演；区域约东西22公里、南北13公里，8个步骤、30个图上标记，约2分30秒。坐标仅用于示意，不对应真实园区或可通行道路。报警、疏散等任务可并行；播放顺序不是现场操作先后要求。历史标记累积保留，以步骤编号识别。">
     <step id="wf-step-01" name="01 发现报警" description="注入：仓库发现烟火。标记火点、报告警情并同步启动疏散。红色为初始情景记录；区域边界仅供演示。" markerDisplay="sequential" markerDurationSeconds="5" durationSeconds="20">
       <viewpoint longitude="120.36500000" latitude="36.31000000" altitude="0" heading="0" pitch="-75" range="2600" flyTimeSeconds="2" />
       <markers>

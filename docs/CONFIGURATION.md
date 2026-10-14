@@ -45,7 +45,7 @@
 </TMSImage>
 ```
 
-example.invalid 是占位地址，不提供地图。实际地址应返回 TileMap 元数据而非登录网页，瓦片坐标系、格式和层级以服务为准。FreeEarthSDK 本批 4.0.0 包含 TMS 相对 TileSet href 修复，不需要另造本地兼容 XML。配置后重新打开项目并定位到服务覆盖区，确认影像实际显示。
+example.invalid 是占位地址，不提供地图。实际地址应返回 TileMap 元数据而非登录网页，瓦片坐标系、格式和层级以服务为准。ShEarthSDK 本批 4.0.0 包含 TMS 相对 TileSet href 修复，不需要另造本地兼容 XML。配置后重新打开项目并定位到服务覆盖区，确认影像实际显示。
 
 TMS 高程可用 TMSElevation，但需服务提供可用的高程数据格式；不能把普通 jpg 影像当作高程。
 

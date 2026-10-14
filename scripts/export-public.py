@@ -12,10 +12,12 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = ('CMakeLists.txt','CMakePresets.json','README.md','LICENSE','NOTICE','AUTHORS.md',
               'THIRD_PARTY_NOTICES.md','CONTRIBUTING.md','CHANGELOG.md','.gitignore','.gitattributes')
-SOURCE_DIRS = ('src','tests','resources','assets','sdk/videoSDK','sdk/FreeEarthSDK','.github')
+SOURCE_DIRS = ('src','tests','resources','assets','.github')
+SDK_FILES = ('sdk/ShEarthSDK/README.md','sdk/ShEarthSDK/include/ShEarthSDK/EarthRuntime.h',
+             'sdk/ShVideoSDK/README.md','sdk/ShVideoSDK/include/ShVideoSDK/VideoPlayer.h')
 DOCS = ('DESIGN.md','BUILD.md','ACCEPTANCE.md','PUBLISHING.md','VALIDATION.md','CONFIGURATION.md',
         'USER_GUIDE.md','USER_GUIDE.html','USER_GUIDE.pdf','UBUNTU_RELEASE.md','ASSET_PROVENANCE.md',
-        'SDK_VERSION_MATRIX.md','FREEEARTH_VIEWER_TERMS_DRAFT.md','GITHUB_SETUP.md','images/interface-overview.svg')
+        'SDK_VERSION_MATRIX.md','SDK_LAYOUT.md','SDK_VIEWER_TERMS_DRAFT.md','GITHUB_SETUP.md','images/interface-overview.svg')
 SCRIPTS = ('Build-Windows.cmd','Deploy-Windows.ps1','Run-Windows.cmd','build-ubuntu.sh','run-ubuntu.sh',
            'Prepare-Release.cmake','check-public.py','export-public.py','Install-Ubuntu-Shortcut.sh','render-app-icon.cjs')
 EXAMPLES = ('examples/warehouse-fire/README.md','examples/warehouse-fire/dynamic-plans.xml','examples/warehouse-fire/generate.py')
@@ -23,10 +25,15 @@ SUFFIXES = {'.c','.cc','.cpp','.cxx','.h','.hpp','.ui','.qrc','.cmake','.in','.m
             '.tga','.svg','.ico','.cjs','.ive','.xml','.earth','.json','.py','.ps1','.cmd','.sh','.pri','.yml','.yaml'}
 PRUNE = {'private','dependencies','build','dist','release','cache','cache_flat','log','settings','Projects',
          'map','maps','tiles','ffmpeg7','win64','__pycache__','.git'}
-EXCLUDE_DIRS = {'resources/flight/H6','resources/images/login','resources/images/menu'}
+EXCLUDE_DIRS = {'resources/flight/H6','resources/images/login','resources/images/menu',
+                'sdk/ShEarthSDK/windows-x64','sdk/ShEarthSDK/ubuntu2204-x64',
+                'sdk/ShVideoSDK/windows-x64','sdk/ShVideoSDK/ubuntu2204-x64'}
 
 def selected_files():
     selected = [ROOT / name for name in ROOT_FILES]
+    # 20261014 hello: only reviewed public SDK facades may enter the source export.
+    # Do not walk SDK trees, even if a future private file has an allowed suffix.
+    selected += [ROOT/name for name in SDK_FILES]
     selected += [ROOT/'docs'/name for name in DOCS] + [ROOT/'scripts'/name for name in SCRIPTS]
     selected += [ROOT/name for name in EXAMPLES]
     for name in SOURCE_DIRS:

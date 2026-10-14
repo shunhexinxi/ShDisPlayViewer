@@ -10,7 +10,7 @@ TEXT_SUFFIXES = {".c", ".cc", ".cpp", ".h", ".hpp", ".md", ".txt", ".xml",
                  ".in", ".ui", ".qrc", ".svg", ".cjs", ".html", ".yml", ".yaml"}
 FORBIDDEN_SUFFIXES = {".exe", ".dll", ".so", ".dylib", ".lib", ".a", ".pdb"}
 REQUIRED = {"LICENSE", "README.md", "THIRD_PARTY_NOTICES.md", "CONTRIBUTING.md",
-            "sdk/FreeEarthSDK/README.md", "sdk/videoSDK/README.md"}
+            "sdk/ShEarthSDK/README.md", "sdk/ShVideoSDK/README.md"}
 FORBIDDEN_PARTS = {"private", "dependencies", "build", "release", "dist", "cache_flat"}
 PATTERNS = {
     "private IPv4 address": re.compile(r"\b(?:10(?:\.\d{1,3}){3}|192\.168(?:\.\d{1,3}){2}|172\.(?:1[6-9]|2\d|3[01])(?:\.\d{1,3}){2})\b"),
@@ -36,6 +36,21 @@ def check(root: Path) -> list[str]:
             continue
         if not path.is_file():
             continue
+        # 20261014 hello: SDK implementations, including private helper headers,
+        # must never enter a public Viewer source candidate.
+        if relative.parts[:1] == ("sdk",):
+            sdk_files = {
+                "sdk/ShEarthSDK/include/ShEarthSDK/EarthRuntime.h",
+                "sdk/ShVideoSDK/include/ShVideoSDK/VideoPlayer.h",
+                "sdk/ShEarthSDK/README.md",
+                "sdk/ShVideoSDK/README.md",
+            }
+            if name not in sdk_files:
+                issues.append(f"unapproved SDK file: {name}")
+            if path.suffix.lower() in {".c", ".cc", ".cpp", ".cxx", ".inl", ".pri"}:
+                issues.append(f"closed SDK implementation: {name}")
+            if path.suffix.lower() in {".h", ".hpp"} and name not in sdk_files:
+                issues.append(f"closed SDK internal header: {name}")
         if any(part in FORBIDDEN_PARTS for part in relative.parts):
             issues.append(f"private/build path: {name}")
         if path.suffix.lower() in FORBIDDEN_SUFFIXES:
